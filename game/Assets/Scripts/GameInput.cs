@@ -1,0 +1,18 @@
+using UnityEngine;
+
+public class GameInput : MonoBehaviour
+{
+    private InputSystem_Actions inputSystemActions;
+
+    private void Awake()
+    {
+        inputSystemActions = new InputSystem_Actions();  // Moved instantiation to Awake
+        inputSystemActions.Player.Enable();
+    }
+
+    public Vector2 GetMovementVector2Normalized()
+    {
+        Vector2 inputVector2 = inputSystemActions.Player.Move.ReadValue<Vector2>();
+        return inputVector2.normalized;
+    }
+}
