@@ -6,7 +6,7 @@ public class GameInput : MonoBehaviour
 
     private void Awake()
     {
-        inputSystemActions = new InputSystem_Actions();  // Moved instantiation to Awake
+        inputSystemActions = new InputSystem_Actions();
         inputSystemActions.Player.Enable();
     }
 
