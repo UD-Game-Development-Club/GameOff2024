@@ -15,4 +15,9 @@ public class GameInput : MonoBehaviour
         Vector2 inputVector2 = inputSystemActions.Player.Move.ReadValue<Vector2>();
         return inputVector2.normalized;
     }
+
+    public bool GetInteractClick()
+    {
+        return inputSystemActions.Player.Interact.WasPressedThisFrame();
+    }
 }
