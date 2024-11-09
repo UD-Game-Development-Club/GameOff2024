@@ -73,3 +73,4 @@
 
 # custom: not included in original github ignore
 **/*.DS_Store
+**/.vscode
