@@ -20,4 +20,9 @@ public class GameInput : MonoBehaviour
     {
         return inputSystemActions.Player.Interact.WasPressedThisFrame();
     }
+
+    public Vector2 GetMouseDelta()
+    {
+        return inputSystemActions.Player.Look.ReadValue<Vector2>();
+    }
 }

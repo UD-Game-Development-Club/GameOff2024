@@ -5,22 +5,22 @@ public class Character : MonoBehaviour
 {
     [SerializeField] private GameInput gameInput;
     [SerializeField] private TimeTravel timeTravel;
-    [SerializeField] private float moveSpeed = 7;
-    private float rotateSpeed = 10;
+    [SerializeField] private Transform orientation;
+    private float moveSpeed = 6;
 
     private void Update()
     {
-        Vector2 inputVector = gameInput.GetMovementVector2Normalized();
+        transform.rotation = Quaternion.Euler(0, orientation.eulerAngles.y, 0);
 
-        Vector3 moveDirection = new Vector3(inputVector.x, 0, inputVector.y);
+        Vector2 inputVector = gameInput.GetMovementVector2Normalized();
+        Vector3 moveDirection = orientation.forward * inputVector.y + orientation.right * inputVector.x;
+        moveDirection.y = 0;
+
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
         
-        transform.forward = Vector3.Slerp(transform.forward, moveDirection, Time.deltaTime * rotateSpeed);
-
         if(gameInput.GetInteractClick())
         {
             timeTravel.SwitchTimePeriod();
         }
     }
-
 }
