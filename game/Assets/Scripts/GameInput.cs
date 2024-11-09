@@ -16,6 +16,11 @@ public class GameInput : MonoBehaviour
         return inputVector2.normalized;
     }
 
+    public bool GetInteractClick()
+    {
+        return inputSystemActions.Player.Interact.WasPressedThisFrame();
+    }
+
     public Vector2 GetMouseDelta()
     {
         return inputSystemActions.Player.Look.ReadValue<Vector2>();

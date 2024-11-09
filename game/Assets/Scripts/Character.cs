@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 public class Character : MonoBehaviour
 {
     [SerializeField] private GameInput gameInput;
+    [SerializeField] private TimeTravel timeTravel;
     [SerializeField] private Transform orientation;
     private float moveSpeed = 6;
 
@@ -15,5 +17,10 @@ public class Character : MonoBehaviour
         moveDirection.y = 0;
 
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        
+        if(gameInput.GetInteractClick())
+        {
+            timeTravel.SwitchTimePeriod();
+        }
     }
 }
