@@ -74,6 +74,3 @@
 # custom: not included in original github ignore
 **/*.DS_Store
 **/.vscode
-
-# auto generated
-**/InputSystem_Actions.cs
