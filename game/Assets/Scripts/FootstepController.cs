@@ -23,8 +23,6 @@ public class FootstepController : MonoBehaviour
      * sound based on the tag of the object beneath the player
      */
     public void PlayFootstepSound(RaycastHit hit) {
-        Debug.Log(hit.collider.tag);
-
         switch (hit.collider.tag)
         {
             case "wood":
