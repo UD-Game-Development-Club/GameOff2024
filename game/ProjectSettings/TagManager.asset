@@ -7,11 +7,15 @@ TagManager:
   - Present
   - Past
   - Shared
+  - wood
+  - carpet
+  - concrete
+  - grass
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Floor
   - Water
   - UI
   - 
