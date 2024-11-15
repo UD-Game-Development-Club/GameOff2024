@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 241840628785907644}
   - component: {fileID: 8742416322344274090}
   - component: {fileID: 3562206611354146556}
+  - component: {fileID: 922777081701862214}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -187,6 +188,9 @@ MonoBehaviour:
   gameInput: {fileID: 0}
   timeTravel: {fileID: 0}
   moveSpeed: 6
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!54 &8742416322344274090
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -237,3 +241,34 @@ CapsuleCollider:
   m_Height: 2.036056
   m_Direction: 1
   m_Center: {x: 0, y: 0.85197186, z: 0}
+--- !u!114 &922777081701862214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5041958083041957412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11a37b9b9ae9c749b3044cf86ab5bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  woodFootstepSounds:
+  - {fileID: 8300000, guid: a77362e4fb1094b4298151691a44eef5, type: 3}
+  - {fileID: 8300000, guid: 16183a6018b51754080a567c6659d037, type: 3}
+  - {fileID: 8300000, guid: 67d97e95a7244034e836100918eda41d, type: 3}
+  concreteFootstepSounds:
+  - {fileID: 8300000, guid: 764e8c4c3930f854aa47cf7ec2998937, type: 3}
+  - {fileID: 8300000, guid: 78a68ae79c9d85946a652996603710a8, type: 3}
+  carpetFootstepSounds:
+  - {fileID: 8300000, guid: 5fce1a94cd38d8240a98e5568cf4bd6f, type: 3}
+  grassFootstepSounds:
+  - {fileID: 8300000, guid: bab016bd5012bc440af54472d7bda860, type: 3}
+  - {fileID: 8300000, guid: fbaed3ccf7389f1419adf34d3f796c2a, type: 3}
+  - {fileID: 8300000, guid: db133f2fb07e3ba4da07941a3ce79cc9, type: 3}
+  footstepInterval: 0.5
+  footstepCooldown: 0
+  footstepPitchVariance: 0.1
