@@ -7,9 +7,9 @@ using UnityEngine.Rendering;
 public class BackgroundMusic : MonoBehaviour
 {
     // reference to all music clips and audio sources
-    public AudioSource audioSourceIntro;
-    public AudioSource audioSourcePast;
-    public AudioSource audioSourcePresent;
+    [SerializeField] private AudioSource audioSourceIntro;
+    [SerializeField] private AudioSource audioSourcePast;
+    [SerializeField] private AudioSource audioSourcePresent;
 
     // reference gameInput to swap music tacks anytime time travel button is pressed
     [SerializeField] private GameInput gameInput;
