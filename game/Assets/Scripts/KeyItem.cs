@@ -1,5 +1,5 @@
 using UnityEngine;
-public class KeyItem : MonoBehaviour, Item
+public class KeyItem : MonoBehaviour, IInteractable
 {
     [SerializeField] private readonly string itemID = "Example Key";
     //[SerializeField] private AudioClip pickupSound;
@@ -25,15 +25,20 @@ public class KeyItem : MonoBehaviour, Item
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        var inventory = other.GetComponent<Inventory>();
+    //        if (inventory != null)
+    //        {
+    //            OnPickup(inventory);
+    //        }
+    //    }
+    //}
+
+    public void Interact()
     {
-        if (other.CompareTag("Player"))
-        {
-            var inventory = other.GetComponent<Inventory>();
-            if (inventory != null)
-            {
-                OnPickup(inventory);
-            }
-        }
+        Debug.Log(Random.Range(0, 100));
     }
 }
