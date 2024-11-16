@@ -30,4 +30,9 @@ public class GameInput : MonoBehaviour
     {
         return inputSystemActions.Player.ItemInteraction.WasPressedThisFrame();
     }
+
+    public bool GetSpaceBar()
+    {
+        return inputSystemActions.Player.Jump.WasPressedThisFrame();
+    }
 }
