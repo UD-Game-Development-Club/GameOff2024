@@ -25,4 +25,9 @@ public class GameInput : MonoBehaviour
     {
         return inputSystemActions.Player.Look.ReadValue<Vector2>();
     }
+
+    public bool GetItemInteraction()
+    {
+        return inputSystemActions.Player.ItemInteraction.WasPressedThisFrame();
+    }
 }

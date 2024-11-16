@@ -1,25 +1,27 @@
 using UnityEngine;
 
-interface IInteractable
-{
-    public void Interact();
-}
 public class Interactor : MonoBehaviour
 {
+    [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform interactor;
-    private readonly float interactRange = 5f;
+    private readonly float interactRange = 1;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (gameInput.GetItemInteraction())
         {
-            Ray ray = new Ray(interactor.position, interactor.forward);
-            if (Physics.Raycast(ray, out RaycastHit hitInfo, interactRange))
+            HandleInteraction();
+        }
+    }
+
+    private void HandleInteraction()
+    {
+        Ray ray = new Ray(interactor.position, interactor.forward);
+        if (Physics.Raycast(ray, out RaycastHit hitInfo, interactRange))
+        {
+            if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
             {
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj))
-                {
-                    interactObj.Interact();
-                }
+                interactObj.Interact();
             }
         }
     }
