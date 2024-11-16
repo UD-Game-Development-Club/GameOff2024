@@ -25,4 +25,9 @@ public class GameInput : MonoBehaviour
     {
         return inputSystemActions.Player.Look.ReadValue<Vector2>();
     }
+
+    public bool GetSpaceBar()
+    {
+        return inputSystemActions.Player.Jump.WasPressedThisFrame();
+    }
 }
