@@ -9,4 +9,12 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
     {
         DialogueManager.Instance.StartDialogue(inkJSON);
     }
+
+    public void OnTriggerEnter(Collider collider) 
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            Interact();
+        }
+    }
 }
