@@ -25,4 +25,29 @@ public class GameInput : MonoBehaviour
     {
         return inputSystemActions.Player.Look.ReadValue<Vector2>();
     }
+
+    public bool GetAttackClick()
+    {
+        return inputSystemActions.Player.Attack.WasPressedThisFrame();
+    }
+
+    public void DisableMoveInput()
+    {
+        inputSystemActions.Player.Move.Disable();
+    }
+
+    public void EnableMoveInput()
+    {
+        inputSystemActions.Player.Move.Enable();
+    }
+
+    public void DisableLook()
+    {
+        inputSystemActions.Player.Look.Disable();
+    }
+
+    public void EnableLook()
+    {
+        inputSystemActions.Player.Look.Enable();
+    }
 }

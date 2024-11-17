@@ -16,7 +16,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (input.GetInteractClick() && playerInRange)
         {
-            Debug.Log(inkJSON);
+            DialogueManager.Instance.StartDialogue(inkJSON);
         }
     }
 
