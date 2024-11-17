@@ -2,24 +2,23 @@ using UnityEngine;
 
 public class IntroCutsceneController : MonoBehaviour
 {
+    private GameInput gameInput;
+
     private GameObject slide;
-
-    public int slideIndex = 0;
-
     [SerializeField] private Texture2D[] slides;
+    private int slideIndex = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameInput = gameObject.AddComponent<GameInput>();
         slide = transform.Find("CurrentSlide").gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
         slide.GetComponent<UnityEngine.UI.RawImage>().texture = slides[slideIndex];
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (gameInput.GetSpaceBar())
         {
             slideIndex++;
         

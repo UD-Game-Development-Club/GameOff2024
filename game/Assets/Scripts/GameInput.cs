@@ -26,6 +26,7 @@ public class GameInput : MonoBehaviour
         return inputSystemActions.Player.Look.ReadValue<Vector2>();
     }
 
+
     public bool GetAttackClick()
     {
         return inputSystemActions.Player.Attack.WasPressedThisFrame();
@@ -49,5 +50,15 @@ public class GameInput : MonoBehaviour
     public void EnableLook()
     {
         inputSystemActions.Player.Look.Enable();
+    }
+
+    public bool GetItemInteraction()
+    {
+        return inputSystemActions.Player.ItemInteraction.WasPressedThisFrame();
+    }
+
+    public bool GetSpaceBar()
+    {
+        return inputSystemActions.Player.Jump.WasPressedThisFrame();
     }
 }
