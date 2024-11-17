@@ -50,4 +50,14 @@ public class GameInput : MonoBehaviour
     {
         inputSystemActions.Player.Look.Enable();
     }
+    
+    public bool GetItemInteraction()
+    {
+        return inputSystemActions.Player.ItemInteraction.WasPressedThisFrame();
+    }
+
+    public bool GetSpaceBar()
+    {
+        return inputSystemActions.Player.Jump.WasPressedThisFrame();
+    }
 }
