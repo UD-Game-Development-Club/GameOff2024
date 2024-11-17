@@ -4,20 +4,11 @@ public class Dialogue : MonoBehaviour
 {
     public static Dialogue Instance { get; private set;}
     [SerializeField] private GameObject dialogueText;
-
-    public GameObject DialogueText
-    {
-        get { return dialogueText; }
-        private set { dialogueText = value; }
-    }
-
     [SerializeField] private GameObject dialogueChoicePanel;
 
-    public GameObject DialogueChoicePanel 
-    {
-        get { return dialogueChoicePanel;}
-        private set { dialogueChoicePanel = value;}
-    }
+
+    public GameObject DialogueText => dialogueText;
+    public GameObject DialogueChoicePanel => dialogueChoicePanel;
 
     void Awake()
     {
