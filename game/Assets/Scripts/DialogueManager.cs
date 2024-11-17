@@ -113,6 +113,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueDialog()
     {
+        // Remove all choices if any
         foreach(Transform child in dialogueChoicesPanel)
         {
             Destroy(child.gameObject);
