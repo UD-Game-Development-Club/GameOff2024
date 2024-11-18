@@ -13,6 +13,10 @@ public class Outliner : MonoBehaviour
             highlightedObject = null;
         }
 
+        // debug: visualize ray
+        // BUG: ray comes from the players feet, not the camera (with angle) - TODO
+        // Debug.DrawRay(interactor.transform.position, interactor.transform.forward * interactor.InteractRange, Color.red);
+
         Ray ray = new Ray(interactor.transform.position, interactor.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hitInfo, interactor.InteractRange))
         {
