@@ -8,7 +8,7 @@ public class MainMenuScript : MonoBehaviour
 
     private void Start()
     {
-        settings.gameObject.SetActive(false);
+        // settings.gameObject.SetActive(false);
     }
 
     private void Startgame()
