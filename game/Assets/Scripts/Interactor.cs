@@ -9,6 +9,7 @@ public class Interactor : MonoBehaviour
 
     void Update()
     {
+        gameInput = gameObject.AddComponent<GameInput>();
         if (gameInput.GetItemInteraction())
         {
             HandleInteraction();

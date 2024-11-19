@@ -9,7 +9,7 @@ public class PickUpSphere : MonoBehaviour, IInteractable
         pickUpController = Camera.main.GetComponent<PickUpController>();
     }
 
-    public void Interact()
+    public void OnInteraction()
     {
         if (pickUpController != null)
         {
