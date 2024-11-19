@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour
         audioSource.loop = true;
         audioSource.playOnAwake = false;
         audioSource.clip = textSFX;
+        audioSource.volume = 0.25f;
     }
 
     private void Update() 
@@ -136,7 +137,7 @@ public class DialogueManager : MonoBehaviour
         foreach(char c in currentDialogue)
         {
             dialogueText.text += c;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         audioSource.Stop();
         DisplayChoices();
