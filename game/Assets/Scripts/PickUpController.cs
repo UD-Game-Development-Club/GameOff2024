@@ -1,21 +1,17 @@
 using UnityEngine;
 
-// First, the PickUpController becomes more focused on just handling held objects
 public class PickUpController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private Transform holdPosition;
-    [SerializeField] private float throwForce = 500f;
-    [SerializeField] private float rotationSensitivity = 1f;
-
+    private float throwForce = 400;
+    [SerializeField] private GameInput gameInput;
     private GameObject heldObj;
     private Rigidbody heldObjRb;
-    private bool canDrop = true;
-    private int holdLayerNumber;
 
     private void Start()
     {
-        holdLayerNumber = LayerMask.NameToLayer("holdLayer");
+        gameInput = gameObject.AddComponent<GameInput>();
     }
 
     private void Update()
@@ -23,15 +19,12 @@ public class PickUpController : MonoBehaviour
         if (heldObj != null)
         {
             MoveObject();
-            RotateObject();
-
-            // Drop or throw
-            if (Input.GetKeyDown(KeyCode.E) && canDrop)
+            if (gameInput.GetDropItem())
             {
                 StopClipping();
                 DropObject();
             }
-            else if (Input.GetKeyDown(KeyCode.Mouse0) && canDrop)
+            else if (gameInput.GetLeftClick())
             {
                 StopClipping();
                 ThrowObject();
@@ -39,7 +32,6 @@ public class PickUpController : MonoBehaviour
         }
     }
 
-    // Make this public so it can be called from PickUpSphere
     public void PickUpObject(GameObject pickUpObj)
     {
         if (pickUpObj.GetComponent<Rigidbody>() && heldObj == null)
@@ -48,7 +40,6 @@ public class PickUpController : MonoBehaviour
             heldObjRb = pickUpObj.GetComponent<Rigidbody>();
             heldObjRb.isKinematic = true;
             heldObjRb.transform.parent = holdPosition.transform;
-            heldObj.layer = holdLayerNumber;
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
     }
@@ -56,7 +47,6 @@ public class PickUpController : MonoBehaviour
     private void DropObject()
     {
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        heldObj.layer = 0;
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
         heldObj = null;
@@ -67,26 +57,9 @@ public class PickUpController : MonoBehaviour
         heldObj.transform.position = holdPosition.transform.position;
     }
 
-    private void RotateObject()
-    {
-        if (Input.GetKey(KeyCode.R))
-        {
-            canDrop = false;
-            float xAxisRotation = Input.GetAxis("Mouse X") * rotationSensitivity;
-            float yAxisRotation = Input.GetAxis("Mouse Y") * rotationSensitivity;
-            heldObj.transform.Rotate(Vector3.down, xAxisRotation);
-            heldObj.transform.Rotate(Vector3.right, yAxisRotation);
-        }
-        else
-        {
-            canDrop = true;
-        }
-    }
-
     private void ThrowObject()
     {
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        heldObj.layer = 0;
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
         heldObjRb.AddForce(transform.forward * throwForce);
