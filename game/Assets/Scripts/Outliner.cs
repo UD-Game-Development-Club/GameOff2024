@@ -3,7 +3,12 @@ using UnityEngine;
 public class Outliner : MonoBehaviour
 {
     [SerializeField] private Interactor interactor;
+    [SerializeField] private Camera playerCamera;  // Reference to the main camera
     private Transform highlightedObject;
+
+    private void Start()
+    {
+    }
 
     void Update()
     {
@@ -13,11 +18,15 @@ public class Outliner : MonoBehaviour
             highlightedObject = null;
         }
 
-        Ray ray = new Ray(interactor.transform.position, interactor.transform.forward);
+        // Create ray from camera instead of player position
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
+
+        // Debug visualization (optional)
+        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * interactor.InteractRange, Color.red);
+
         if (Physics.Raycast(ray, out RaycastHit hitInfo, interactor.InteractRange))
         {
             Transform target = hitInfo.transform;
-
             if (target.CompareTag("Selectable"))
             {
                 EnableOutline(target);
