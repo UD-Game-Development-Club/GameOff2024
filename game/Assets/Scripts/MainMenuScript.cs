@@ -3,29 +3,28 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public string gameScene;
-    public GameObject mainMenu;
-    public GameObject settings;
+    private GameObject mainMenu;
+    private GameObject settings;
 
-    public void Start()
+    private void Start()
     {
         settings.gameObject.SetActive(false);
     }
 
-    public void Startgame()
+    private void Startgame()
     {
-        SceneManager.LoadScene(gameScene);
+        SceneManager.LoadScene("IntroCutscene");
     }
-    public void QuitGame()
+    private void QuitGame()
     {
         Application.Quit();
     }
-    public void Settings()
+    private void Settings()
     {
         mainMenu.gameObject.SetActive(false);
         settings.SetActive(true);
     }
-    public void CloseSettings()
+    private void CloseSettings()
     {
         settings.SetActive(false);
         mainMenu.gameObject.SetActive(true);
