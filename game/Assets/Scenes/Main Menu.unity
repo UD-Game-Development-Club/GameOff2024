@@ -520,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937c33558f3770348ae187d7b2b65353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 0}
 --- !u!114 &174176704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c110a45f2b29d64d828ba8a1252a535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameScene: IntroCutscene
+  mainMenu: {fileID: 333689875}
+  settings: {fileID: 1447516268}
 --- !u!1 &202793573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,7 +2891,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 775, y: -375}
-  m_SizeDelta: {x: 300, y: 300}
+  m_SizeDelta: {x: 275, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &995366833
 MonoBehaviour:
@@ -3836,9 +3840,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 174176698}
+      - m_Target: {fileID: 174176704}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Startgame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
