@@ -1,16 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class AxePickupScript : MonoBehaviour
+public class AxePickupScript : MonoBehaviour, IInteractable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [System.Obsolete]
+    public void OnInteraction(){
+        this.gameObject.SetActive(false);
+        OutdoorGameState.Instance.hasAxe = true;
+        Debug.Log("This is axe !!!!!");
     }
 }
