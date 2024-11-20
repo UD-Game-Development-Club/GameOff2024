@@ -4,7 +4,7 @@ public class Interactor : MonoBehaviour
 {
     [SerializeField] private GameInput gameInput;
     [SerializeField] private Transform interactor;
-    private readonly float interactRange = 1;
+    private readonly float interactRange = 2;
     public float InteractRange => interactRange;
 
     void Update()
