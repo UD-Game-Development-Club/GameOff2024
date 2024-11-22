@@ -10,7 +10,10 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            DialogueManager.Instance.StartDialogue(inkJSON);
+             DialogueManager.Instance.StartDialogue(inkJSON);
+
+            // delete the current game object
+            Destroy(gameObject);
         }
     }
 }

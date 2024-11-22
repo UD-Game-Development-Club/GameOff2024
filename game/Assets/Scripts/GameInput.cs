@@ -58,4 +58,14 @@ public class GameInput : MonoBehaviour
     {
         return inputSystemActions.Player.Jump.WasPressedThisFrame();
     }
+
+    public bool GetDropItem()
+    {
+        return inputSystemActions.Player.DropItem.WasPressedThisFrame();
+    }
+
+    public bool GetLeftClick()
+    {
+        return inputSystemActions.Player.Attack.WasPressedThisFrame();
+    }
 }
