@@ -10,6 +10,11 @@ public class GameInput : MonoBehaviour
         inputSystemActions.Player.Enable();
     }
 
+    private void OnDestroy()
+    {
+        inputSystemActions.Player.Disable();
+    }
+
     public Vector2 GetMovementVector2Normalized()
     {
         Vector2 inputVector2 = inputSystemActions.Player.Move.ReadValue<Vector2>();
