@@ -40,6 +40,7 @@ public class OutroCutsceneController : MonoBehaviour
                 {
                     inSlideShow = false;
                     transform.Find("CurrentSlide").gameObject.SetActive(false);
+                    transform.Find("proceed").gameObject.SetActive(false);
                 }
             }
         }
