@@ -487,6 +487,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameInput: {fileID: 7913464061236404187}
   timeTravel: {fileID: 1865490367251800587}
+  past: 0
+  animator: {fileID: 0}
+  toPast: {fileID: 5364243015959843943}
+  toFuture: {fileID: 5643382255313705861}
 --- !u!4 &6969910438343849364 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7830309700233208688, guid: 303ef4bf96431104c88db114cee60fcc, type: 3}
@@ -544,6 +548,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7576751535854627687, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: d2ae632abb145ed4091e80cdfd990588, type: 3}
+    - target: {fileID: 7576751535854627687, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d2ae632abb145ed4091e80cdfd990588, type: 3}
+    - target: {fileID: 7856190591575385221, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: fe3eb917d20498f479bac310db495aa3, type: 3}
+    - target: {fileID: 7856190591575385221, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fe3eb917d20498f479bac310db495aa3, type: 3}
     - target: {fileID: 8490679403257813801, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}
       propertyPath: m_Name
       value: Time Book
@@ -553,6 +573,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}
+--- !u!82 &5364243015959843943 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7576751535854627687, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}
+  m_PrefabInstance: {fileID: 2546673417502506752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &5643382255313705861 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7856190591575385221, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}
+  m_PrefabInstance: {fileID: 2546673417502506752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7937255802684544212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5580335849339431892, guid: 5631cd76c34489943ae08ff087b3a459, type: 3}

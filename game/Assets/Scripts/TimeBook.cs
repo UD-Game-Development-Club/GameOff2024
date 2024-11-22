@@ -5,14 +5,14 @@ public class TimeBook : MonoBehaviour
 {
     [SerializeField] private GameInput gameInput;
     [SerializeField] private TimeTravel timeTravel;
-    private bool past = false;
-    private Animator animator;
-    //private GameObject book;
+    [SerializeField] private bool past = false;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioSource toPast;
+    [SerializeField] private AudioSource toFuture;
 
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        //book = transform.Find("Book").gameObject;
     }
 
     private void Update()
@@ -34,7 +34,7 @@ public class TimeBook : MonoBehaviour
         {
             // play open anim
             animator.SetBool("TimeTravel", true);
-            // play sound
+            toPast.Play();
             yield return new WaitForSeconds(animationLength);
             past = true;
             timeTravel.SwitchTimePeriod();
@@ -43,10 +43,10 @@ public class TimeBook : MonoBehaviour
         {
             // play close anim
             animator.SetBool("TimeTravel", false);
+            toPast.Play();
             yield return new WaitForSeconds(0.1f);
             past = false;
             timeTravel.SwitchTimePeriod();
-            // play sound
         }
     }
 }

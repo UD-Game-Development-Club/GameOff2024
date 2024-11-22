@@ -1301,6 +1301,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130331689}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &1165767173 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5643382255313705861, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+  m_PrefabInstance: {fileID: 3311039419968468761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1182427454 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5364243015959843943, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+  m_PrefabInstance: {fileID: 3311039419968468761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1609822317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,6 +1571,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameInput: {fileID: 67075174}
   timeTravel: {fileID: 2026840698}
+  past: 0
+  animator: {fileID: 0}
+  toPast: {fileID: 1182427454}
+  toFuture: {fileID: 1165767173}
 --- !u!1 &1818192124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,11 +1845,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1391881685430189439, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0000903327
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1391881685430189439, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 82.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1841958584884408783, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
       propertyPath: near clip plane
