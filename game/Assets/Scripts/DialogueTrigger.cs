@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -9,7 +10,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-             DialogueManager.Instance.StartDialogue(inkJSON);
+            DialogueManager.Instance.StartDialogue(inkJSON);
         }
     }
 }

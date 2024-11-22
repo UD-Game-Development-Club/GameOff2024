@@ -1,3 +1,5 @@
+EXTERNAL choiceCallback()
+
 -> main
 
 === main ===
@@ -10,5 +12,6 @@ These are some sample choices
         -> chosen("Choice 3")
         
 === chosen(choice) ===
+~ choiceCallback()
 You chose {choice}!
 -> END

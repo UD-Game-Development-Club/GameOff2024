@@ -559,6 +559,7 @@ GameObject:
   - component: {fileID: 926251152}
   - component: {fileID: 926251151}
   - component: {fileID: 926251150}
+  - component: {fileID: 926251153}
   m_Layer: 0
   m_Name: TestChoice
   m_TagString: Selectable
@@ -656,6 +657,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926251148}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &926251153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926251148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c393ba29238604bb848e81af414518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 0}
 --- !u!4 &1124916555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3252707624892005859, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
@@ -971,6 +985,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1391881685430189439, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391881685430189439, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2433585406137469311, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
       propertyPath: interactor
       value: 
