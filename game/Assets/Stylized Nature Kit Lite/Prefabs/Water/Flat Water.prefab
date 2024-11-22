@@ -27,14 +27,24 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3199380780439565148}
   serializedVersion: 2
+<<<<<<< Updated upstream:game/Assets/Stylized Nature Kit Lite/Prefabs/Water/Flat Water.prefab
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+=======
+  m_LocalRotation: {x: -4.32978e-17, y: 0.7071067, z: 0.7071068, w: -4.3297806e-17}
+  m_LocalPosition: {x: -3.1132, y: 1e-15, z: -2.1043}
+  m_LocalScale: {x: 0.6506775, y: 0.6506775, z: 0.6506775}
+>>>>>>> Stashed changes:game/Assets/Models/Medieval props/Prefabs/SackV1.prefab
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:game/Assets/Stylized Nature Kit Lite/Prefabs/Water/Flat Water.prefab
 --- !u!33 &4060574840109129225
+=======
+--- !u!33 &3317988
+>>>>>>> Stashed changes:game/Assets/Models/Medieval props/Prefabs/SackV1.prefab
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
