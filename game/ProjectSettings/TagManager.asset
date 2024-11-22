@@ -12,6 +12,7 @@ TagManager:
   - concrete
   - grass
   - Selectable
+  - PaintingCollideable1
   layers:
   - Default
   - TransparentFX

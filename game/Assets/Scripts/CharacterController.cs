@@ -85,10 +85,11 @@ public class CharacterController : MonoBehaviour
 
         /*
          * Time Travel
+         * it is in TimeBook now
          */
-        if (gameInput.GetInteractClick())
-        {
-            timeTravel.SwitchTimePeriod();
-        }
+        //if (gameInput.GetInteractClick())
+        //{
+        //    timeTravel.SwitchTimePeriod();
+        //}
     }
 }
