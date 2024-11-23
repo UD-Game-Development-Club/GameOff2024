@@ -49,7 +49,8 @@ public class OutroCutsceneController : MonoBehaviour
             // slide the credits upwards to simulate scrolling
             credits.transform.position += new Vector3(0, 100 * Time.deltaTime, 0);
 
-            Debug.Log(credits.transform.position.y);
+            // leaving this because of a weird bug, i will need to use it later LOL
+            //Debug.Log(credits.transform.position.y);
             if(credits.transform.position.y > creditThresh)
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
         }
