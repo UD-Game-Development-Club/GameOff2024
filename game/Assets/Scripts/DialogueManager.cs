@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Ink.Runtime;
@@ -27,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     private string currentDialogue;
     private int choiceCount;
     public static DialogueManager Instance { get; private set;}
+    public int currentChoice {get; private set;}
     private void Awake() 
     {
         if (Instance != null && Instance != this)
@@ -65,10 +67,12 @@ public class DialogueManager : MonoBehaviour
 
         if(input.GetAttackClick())
         {
+            // Display entire dialog if dialog is still printing
             if(displayTextCoroutine != null)
             {
                 FinishCurrentDialog();
             }
+            // Continue to next dialogue line
             else if(choiceCount == 0)
             {
                 ContinueDialog();
@@ -76,13 +80,17 @@ public class DialogueManager : MonoBehaviour
         }
     }
     
-    public void StartDialogue(TextAsset inkJSON)
+    public void StartDialogue(TextAsset inkJSON, Action callback = null)
     {
         if(!dialogueActive)
         {
             currentStory = new Story(inkJSON.text);
             dialogueActive = true;
             dialoguePanel.SetActive(true);
+
+            currentStory.BindExternalFunction("choiceCallback", () => {
+                callback?.Invoke();
+            });
             
             // Disable move and camera inputs
             input.DisableMoveInput();
@@ -110,6 +118,7 @@ public class DialogueManager : MonoBehaviour
         // Disable and hide mouse cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
     }
 
     private void ContinueDialog()
@@ -121,7 +130,16 @@ public class DialogueManager : MonoBehaviour
         }
         if(currentStory.canContinue)
         {
+            // Retrieve next dialogue line
             currentDialogue = currentStory.Continue();
+
+            // Handle external function call at end of dialogue
+            if(currentDialogue.Equals("") && !currentStory.canContinue)
+            {
+                ExitDialog();
+            }
+
+            // Display Dialgoue
             dialogueText.text = "";
             displayTextCoroutine = StartCoroutine(DisplayText());
         }
@@ -151,6 +169,7 @@ public class DialogueManager : MonoBehaviour
         int currIndex = 0;   
         foreach(Choice choice in choices)
         {
+            // Choice button setup
             GameObject choiceButton = Instantiate(dialogueChoicePrefab, dialogueChoicesPanel);
             TextMeshProUGUI choiceText = choiceButton.GetComponentInChildren<TextMeshProUGUI>();
             DialogueButton choiceButtonScript = choiceButton.GetComponentInChildren<DialogueButton>();
@@ -171,6 +190,7 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+        currentChoice = choiceIndex;
         currentStory.ChooseChoiceIndex(choiceIndex);
         ContinueDialog();
     }

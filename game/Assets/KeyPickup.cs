@@ -8,6 +8,12 @@ public class KeyPickup : MonoBehaviour, IInteractable
     public StairTrigger stairTrigger;
 
     [SerializeField] private AudioClip obtainSound;
+    private PickUpController pickUpController;
+
+    private void Start()
+    {
+        pickUpController = Camera.main.GetComponent<PickUpController>();
+    }
 
     public void OnInteraction()
     {
@@ -20,6 +26,8 @@ public class KeyPickup : MonoBehaviour, IInteractable
         AudioSource audioSource = player.AddComponent<AudioSource>();
         audioSource.clip = obtainSound;
         audioSource.Play();
+
+        pickUpController.PickUpObject(gameObject);
 
         DialogueManager.Instance.StartDialogue(inkJSON);
     }
