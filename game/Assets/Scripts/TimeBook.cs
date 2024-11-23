@@ -6,47 +6,56 @@ public class TimeBook : MonoBehaviour
     [SerializeField] private GameInput gameInput;
     [SerializeField] private TimeTravel timeTravel;
     [SerializeField] private bool past = false;
+    public bool BookSwitching = false;
     [SerializeField] private Animator animator;
     [SerializeField] private AudioSource toPast;
     [SerializeField] private AudioSource toFuture;
+    [SerializeField] private Rigidbody rb;
 
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
         // TODO: only allow click if anim is not playing
-        if (gameInput.GetInteractClick())
+        if (gameInput.GetInteractClick() && !BookSwitching)
         {
-            StartCoroutine(BookAnimation());
+            StartCoroutine(BookSwitch());
         }
     }
 
-    private IEnumerator BookAnimation()
+    public IEnumerator BookSwitch()
     {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         float animationLength = stateInfo.length;
 
+        BookSwitching = true;
+
         // when pressed in play correct anim
         if (past == false)
         {
-            // play open anim
-            animator.SetBool("TimeTravel", true);
-            toPast.Play();
+            rb.isKinematic = true; // Pause Movement
+            animator.SetBool("TimeTravel", true); // play open anim
+            toPast.Play(); // play to past sound
             yield return new WaitForSeconds(animationLength);
-            past = true;
-            timeTravel.SwitchTimePeriod();
+            past = true; // check it is past
+            timeTravel.SwitchTimePeriod(); // switch time
+            rb.isKinematic = false; // Resume Movement
         }
         else
         {
-            // play close anim
-            animator.SetBool("TimeTravel", false);
-            toPast.Play();
-            yield return new WaitForSeconds(0.1f);
-            past = false;
-            timeTravel.SwitchTimePeriod();
+            rb.isKinematic = true; // Pause Movement
+            animator.SetBool("TimeTravel", false); // play close anim
+            toFuture.Play(); // play to future sound
+            yield return new WaitForSeconds(0.1f); // make transition wait for correct time in animation
+            past = false; // check it is not past
+            timeTravel.SwitchTimePeriod(); // switch time
+            yield return new WaitForSeconds(animationLength-0.1f); // wait for resume movement
+            rb.isKinematic = false; // Resume Movement
         }
+        BookSwitching = false;
     }
 }

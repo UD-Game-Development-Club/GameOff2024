@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1710282964}
+  originalParent: {fileID: 0}
   holdPosition: {fileID: 706693103}
   gameInput: {fileID: 67075174}
 --- !u!1 &173515209
@@ -1572,9 +1573,11 @@ MonoBehaviour:
   gameInput: {fileID: 67075174}
   timeTravel: {fileID: 2026840698}
   past: 0
+  BookSwitching: 0
   animator: {fileID: 0}
   toPast: {fileID: 1182427454}
   toFuture: {fileID: 1165767173}
+  rb: {fileID: 0}
 --- !u!1 &1818192124
 GameObject:
   m_ObjectHideFlags: 0

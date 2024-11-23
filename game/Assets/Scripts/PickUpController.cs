@@ -3,6 +3,7 @@ using UnityEngine;
 public class PickUpController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private Transform originalParent;
     [SerializeField] private Transform holdPosition;
     private float throwForce = 400;
     [SerializeField] private GameInput gameInput;
@@ -19,7 +20,7 @@ public class PickUpController : MonoBehaviour
         if (heldObj != null)
         {
             MoveObject();
-            if (gameInput.GetDropItem())
+            if (gameInput.GetDropItem() || gameInput.GetInteractClick())
             {
                 StopClipping();
                 DropObject();
@@ -36,6 +37,7 @@ public class PickUpController : MonoBehaviour
     {
         if (pickUpObj.GetComponent<Rigidbody>() && heldObj == null)
         {
+            originalParent = heldObjRb.transform.parent;
             heldObj = pickUpObj;
             heldObjRb = pickUpObj.GetComponent<Rigidbody>();
             heldObjRb.isKinematic = true;
@@ -46,6 +48,7 @@ public class PickUpController : MonoBehaviour
 
     private void DropObject()
     {
+        heldObjRb.transform.parent = originalParent.transform.parent;
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
@@ -59,6 +62,7 @@ public class PickUpController : MonoBehaviour
 
     private void ThrowObject()
     {
+        heldObjRb.transform.parent = originalParent.transform.parent;
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
