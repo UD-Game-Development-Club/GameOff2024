@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7276089558781609788}
   m_Layer: 0
   m_Name: Spruce 1
-  m_TagString: Past
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
