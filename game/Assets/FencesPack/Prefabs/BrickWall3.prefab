@@ -25,19 +25,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream:game/Assets/FencesPack/Prefabs/BrickWall3.prefab
   m_GameObject: {fileID: 3970920650234411351}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-=======
-  m_GameObject: {fileID: 115308}
-  serializedVersion: 2
-  m_LocalRotation: {x: -4.32978e-17, y: 0.7071067, z: 0.7071068, w: -4.3297806e-17}
-  m_LocalPosition: {x: 0.46348, y: 2.2974, z: -0.98951}
-  m_LocalScale: {x: 0.21781868, y: 0.21781878, z: 0.21781878}
-  m_ConstrainProportionsScale: 0
->>>>>>> Stashed changes:game/Assets/Models/Medieval props/Prefabs/MugV2.prefab
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

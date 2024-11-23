@@ -54,13 +54,8 @@ Material:
         m_Scale: {x: 5, y: 5}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-<<<<<<< Updated upstream:game/Assets/FencesPack/Materials/Metal.mat
         m_Texture: {fileID: 2800000, guid: 3f16a5509e8adad4ab38fcc554d8f7fc, type: 3}
         m_Scale: {x: 5, y: 5}
-=======
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
->>>>>>> Stashed changes:game/Assets/Materials/Stylized Wood Textures/Materials/Chevron/Chevron.mat
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 2800000, guid: 6e7e1a16dda408c45a906bdea005241b, type: 3}
@@ -132,7 +127,7 @@ Material:
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8601102297219862800
+--- !u!114 &7145846871958956412
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
