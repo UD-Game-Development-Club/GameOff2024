@@ -37,24 +37,24 @@ public class TimeBook : MonoBehaviour
         // when pressed in play correct anim
         if (past == false)
         {
-            rb.isKinematic = true; // Pause Movement
+            // rb.isKinematic = true; // Pause Movement
             animator.SetBool("TimeTravel", true); // play open anim
             toPast.Play(); // play to past sound
             yield return new WaitForSeconds(animationLength);
             past = true; // check it is past
             timeTravel.SwitchTimePeriod(); // switch time
-            rb.isKinematic = false; // Resume Movement
+            // rb.isKinematic = false; // Resume Movement
         }
         else
         {
-            rb.isKinematic = true; // Pause Movement
+            // rb.isKinematic = true; // Pause Movement
             animator.SetBool("TimeTravel", false); // play close anim
             toFuture.Play(); // play to future sound
             yield return new WaitForSeconds(0.1f); // make transition wait for correct time in animation
             past = false; // check it is not past
             timeTravel.SwitchTimePeriod(); // switch time
             yield return new WaitForSeconds(animationLength-0.1f); // wait for resume movement
-            rb.isKinematic = false; // Resume Movement
+            // rb.isKinematic = false; // Resume Movement
         }
         BookSwitching = false;
     }

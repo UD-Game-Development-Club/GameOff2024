@@ -37,10 +37,10 @@ public class PickUpController : MonoBehaviour
     {
         if (pickUpObj.GetComponent<Rigidbody>() && heldObj == null)
         {
-            originalParent = heldObjRb.transform.parent;
             heldObj = pickUpObj;
             heldObjRb = pickUpObj.GetComponent<Rigidbody>();
             heldObjRb.isKinematic = true;
+            originalParent = heldObjRb.transform.parent; // Get Original Parent
             heldObjRb.transform.parent = holdPosition.transform;
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
@@ -48,11 +48,11 @@ public class PickUpController : MonoBehaviour
 
     private void DropObject()
     {
-        heldObjRb.transform.parent = originalParent.transform.parent;
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
-        heldObj.transform.parent = null;
+        heldObj.transform.parent = originalParent; // put held obj back to original parent
         heldObj = null;
+        originalParent = null; // clear original parent
     }
 
     private void MoveObject()
@@ -62,12 +62,12 @@ public class PickUpController : MonoBehaviour
 
     private void ThrowObject()
     {
-        heldObjRb.transform.parent = originalParent.transform.parent;
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
-        heldObj.transform.parent = null;
+        heldObj.transform.parent = originalParent; // put held obj back to original parent
         heldObjRb.AddForce(transform.forward * throwForce);
         heldObj = null;
+        originalParent = null; // clear original parent
     }
 
     private void StopClipping()
