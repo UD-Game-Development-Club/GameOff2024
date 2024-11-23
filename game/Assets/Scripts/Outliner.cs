@@ -17,7 +17,7 @@ public class Outliner : MonoBehaviour
         Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
 
         // Interactor Range - Debug visualization
-        // Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * interactor.InteractRange, Color.red);
+        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * interactor.InteractRange, Color.red);
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo, interactor.InteractRange))
         {
