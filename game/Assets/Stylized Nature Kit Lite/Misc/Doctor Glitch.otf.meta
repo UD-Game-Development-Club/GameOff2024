@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61bffbd3db5c1a6498be8b70091c2365
+guid: b4b8947316b54ed4cad6c212041ef7f6
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -19,3 +19,10 @@ TrueTypeFontImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176906
+  packageName: Stylized Nature Kit Lite
+  packageVersion: 1.2
+  assetPath: Assets/Stylized Nature Kit Lite/Misc/Doctor Glitch.otf
+  uploadId: 705314

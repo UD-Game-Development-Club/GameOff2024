@@ -7,6 +7,8 @@ public class CutTreeScript : MonoBehaviour, IInteractable
     public void OnInteraction(){
         if(OutdoorGameState.Instance.hasAxe){
             this.gameObject.SetActive(false);
+            OutdoorGameState.Instance.treeCut = true;
+            // TODO: implement animation to cut down tree
             Debug.Log("Chopped down tree");
         }
         else{
