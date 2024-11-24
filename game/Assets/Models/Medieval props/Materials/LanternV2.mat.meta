@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: 6b64b70cb21c11645b5eff243bc306c3
+guid: 4a9a4f5e12a27fd48bb4898744b69a49
+timeCreated: 1436432662
+licenseType: Store
 NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 41540
+  packageName: Medieval props
+  packageVersion: 1.0
+  assetPath: Assets/Medieval props/Materials/LanternV2.mat
+  uploadId: 72216

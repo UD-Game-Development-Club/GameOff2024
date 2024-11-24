@@ -3,6 +3,7 @@ using UnityEngine;
 public class Outliner : MonoBehaviour
 {
     [SerializeField] private Interactor interactor;
+    [SerializeField] private Camera playerCamera;
     private Transform highlightedObject;
 
     void Update()
@@ -13,15 +14,14 @@ public class Outliner : MonoBehaviour
             highlightedObject = null;
         }
 
-        // debug: visualize ray
-        // BUG: ray comes from the players feet, not the camera (with angle) - TODO
-        // Debug.DrawRay(interactor.transform.position, interactor.transform.forward * interactor.InteractRange, Color.red);
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
 
-        Ray ray = new Ray(interactor.transform.position, interactor.transform.forward);
+        // Interactor Range - Debug visualization
+        Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * interactor.InteractRange, Color.red);
+
         if (Physics.Raycast(ray, out RaycastHit hitInfo, interactor.InteractRange))
         {
             Transform target = hitInfo.transform;
-
             if (target.CompareTag("Selectable"))
             {
                 EnableOutline(target);

@@ -10,6 +10,11 @@ public class GameInput : MonoBehaviour
         inputSystemActions.Player.Enable();
     }
 
+    private void OnDestroy()
+    {
+        inputSystemActions.Player.Disable();
+    }
+
     public Vector2 GetMovementVector2Normalized()
     {
         Vector2 inputVector2 = inputSystemActions.Player.Move.ReadValue<Vector2>();
@@ -57,5 +62,15 @@ public class GameInput : MonoBehaviour
     public bool GetSpaceBar()
     {
         return inputSystemActions.Player.Jump.WasPressedThisFrame();
+    }
+
+    public bool GetDropItem()
+    {
+        return inputSystemActions.Player.DropItem.WasPressedThisFrame();
+    }
+
+    public bool GetLeftClick()
+    {
+        return inputSystemActions.Player.Attack.WasPressedThisFrame();
     }
 }

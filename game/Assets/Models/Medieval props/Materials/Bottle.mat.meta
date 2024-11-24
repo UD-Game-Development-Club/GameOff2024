@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: cc688f0f2731b534493ed28cdc006538
+guid: 088e7f9cb2e0b5a4f934613dcc4de356
+timeCreated: 1436723867
+licenseType: Store
 NativeFormatImporter:
-  externalObjects: {}
-  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 41540
+  packageName: Medieval props
+  packageVersion: 1.0
+  assetPath: Assets/Medieval props/Materials/Bottle.mat
+  uploadId: 72216
