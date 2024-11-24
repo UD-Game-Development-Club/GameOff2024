@@ -31,6 +31,17 @@ private bool _hasAxe = false;
         }
     }
 
+    private bool _hasKey = false;
+     public bool hasKey
+    {
+        get { return _hasKey; }
+        set
+        {
+            _hasKey = value;
+            
+        }
+    }
+
     private bool _treeCut = false;
     public bool treeCut
     {
