@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class StairTrigger : MonoBehaviour
 {
-    // DAN: I AM GOING TO KEEP THIS PUBLIC. DEAL WITH IT! >:)
     public bool isUnlocked = false;
 
     [Header("Ink JSON")]
