@@ -10,8 +10,8 @@ public class PaintingPuzzleScore : MonoBehaviour
 
     private void Start()
     {
-        painting = gameObject;  // Store the reference to the GameObject this script is attached to
-        rb = GetComponent<Rigidbody>(); // Store reference to GameObjects RigidBody
+        painting = gameObject;
+        rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
     }
 

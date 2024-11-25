@@ -40,7 +40,7 @@ public class PickUpController : MonoBehaviour
             heldObj = pickUpObj;
             heldObjRb = pickUpObj.GetComponent<Rigidbody>();
             heldObjRb.isKinematic = true;
-            originalParent = heldObjRb.transform.parent; // Get Original Parent
+            originalParent = heldObj.transform.parent; // Get Original Parent
             heldObjRb.transform.parent = holdPosition.transform;
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }

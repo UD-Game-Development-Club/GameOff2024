@@ -82,14 +82,5 @@ public class CharacterController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, rotationY, 0);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-
-        /*
-         * Time Travel
-         * it is in TimeBook now
-         */
-        //if (gameInput.GetInteractClick())
-        //{
-        //    timeTravel.SwitchTimePeriod();
-        //}
     }
 }

@@ -13,6 +13,8 @@ TagManager:
   - grass
   - Selectable
   - PaintingCollideable1
+  - PaintingCollideable2
+  - PaintingCollideable3
   layers:
   - Default
   - TransparentFX
