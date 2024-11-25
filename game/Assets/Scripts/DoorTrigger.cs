@@ -13,12 +13,10 @@ public class DoorTrigger : MonoBehaviour, IInteractable
         if (isUnlocked)
         {
             // TODO: play unlock sound
-            Debug.Log("Called interaction");
             gameObject.SetActive(false);
         }
         else
         {
-            Debug.Log("Called interaction");
             DialogueManager.Instance.StartDialogue(inkJSON);
         }
     }

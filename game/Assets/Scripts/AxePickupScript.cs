@@ -3,10 +3,8 @@ using UnityEngine;
 
 public class AxePickupScript : MonoBehaviour, IInteractable
 {
-    [System.Obsolete]
     public void OnInteraction(){
-        this.gameObject.SetActive(false);
-        OutdoorGameState.Instance.hasAxe = true;
+        gameObject.SetActive(false);
         Debug.Log("This is axe !!!!!");
     }
 }
