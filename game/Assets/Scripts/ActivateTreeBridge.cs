@@ -1,14 +1,13 @@
 using UnityEngine;
 
-public class ObjectActivator : MonoBehaviour
+public class ActivateTreeBridge : MonoBehaviour
 {
     // Reference to the object that may become inactive
-    public GameObject targetObject;
+    [SerializeField] private GameObject targetObject;
 
     [System.Obsolete]
     void Update()
     {
-        // Example: Reactivate the object when the "R" key is pressed
         if (OutdoorGameState.Instance.treeCut)
         {
             // Check if the target object exists
@@ -16,7 +15,7 @@ public class ObjectActivator : MonoBehaviour
             {
                 // Reactivate the object
                 targetObject.SetActive(true);
-                Debug.Log("Target object reactivated!");
+                Debug.Log("Tree Bridge Activated");
             }
         }
     }
