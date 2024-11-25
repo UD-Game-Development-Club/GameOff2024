@@ -3,6 +3,7 @@ using UnityEngine;
 public class PickUpController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    [SerializeField] private Transform originalParent;
     [SerializeField] private Transform holdPosition;
     private float throwForce = 400;
     [SerializeField] private GameInput gameInput;
@@ -19,7 +20,7 @@ public class PickUpController : MonoBehaviour
         if (heldObj != null)
         {
             MoveObject();
-            if (gameInput.GetDropItem())
+            if (gameInput.GetDropItem() || gameInput.GetInteractClick())
             {
                 StopClipping();
                 DropObject();
@@ -39,6 +40,7 @@ public class PickUpController : MonoBehaviour
             heldObj = pickUpObj;
             heldObjRb = pickUpObj.GetComponent<Rigidbody>();
             heldObjRb.isKinematic = true;
+            originalParent = heldObj.transform.parent; // Get Original Parent
             heldObjRb.transform.parent = holdPosition.transform;
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
         }
@@ -48,8 +50,9 @@ public class PickUpController : MonoBehaviour
     {
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
-        heldObj.transform.parent = null;
+        heldObj.transform.parent = originalParent; // put held obj back to original parent
         heldObj = null;
+        originalParent = null; // clear original parent
     }
 
     private void MoveObject()
@@ -61,9 +64,10 @@ public class PickUpController : MonoBehaviour
     {
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObjRb.isKinematic = false;
-        heldObj.transform.parent = null;
+        heldObj.transform.parent = originalParent; // put held obj back to original parent
         heldObjRb.AddForce(transform.forward * throwForce);
         heldObj = null;
+        originalParent = null; // clear original parent
     }
 
     private void StopClipping()
