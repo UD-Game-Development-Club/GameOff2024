@@ -5,7 +5,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameInput gameInput;
     [SerializeField] private TimeTravel timeTravel;
 
-    private float moveSpeed;
+    private float moveSpeed = 5;
     private float groundCheckDistance = 1.0f; // Distance to check for ground
 
     private FootstepController footstepController;
