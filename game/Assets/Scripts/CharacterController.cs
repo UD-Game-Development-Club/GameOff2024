@@ -5,7 +5,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameInput gameInput;
     [SerializeField] private TimeTravel timeTravel;
 
-    [SerializeField] private float moveSpeed;
+    private float moveSpeed = 5;
+    private float groundCheckDistance = 1.0f; // Distance to check for ground
 
     private FootstepController footstepController;
 
@@ -22,6 +23,8 @@ public class CharacterController : MonoBehaviour
     private float rotationX = 0f;
     private float rotationY = 0f;
 
+    private bool isGrounded;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,17 +40,33 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         /*
+         * Check if grounded by casting a ray downwards
+         */
+        isGrounded = CheckGrounded();
+
+        /*
          * Movement
          */
         Vector2 inputVector = gameInput.GetMovementVector2Normalized();
         Vector3 moveDirection = (transform.forward * inputVector.y) + (transform.right * inputVector.x);
-        moveDirection.y = 0;
+        moveDirection.y = 0; // Ensure no vertical movement in horizontal plane
 
         bool isMoving = moveDirection.magnitude > 0.1f;
 
         // Preserve the y-axis (gravity) component while manually setting horizontal movement
         Vector3 newVelocity = moveDirection * moveSpeed;
-        newVelocity.y = rb.linearVelocity.y;
+
+        if (isGrounded)
+        {
+            // When grounded, set vertical velocity to 0 to avoid floating
+            newVelocity.y = rb.linearVelocity.y;
+        }
+        else
+        {
+            // Apply gravity if not grounded
+            newVelocity.y = rb.linearVelocity.y; // Allow gravity to take effect
+        }
+
         rb.linearVelocity = newVelocity;
 
         /*
@@ -55,15 +74,8 @@ public class CharacterController : MonoBehaviour
          */
         if (isMoving)
         {
-            // additional check here to save the overhead of a raycast (probably negligible)
             if (footstepController.footstepCooldown <= 0)
             {
-                // DEBUG
-                // Vector3 rayOrigin = transform.position;
-                // Vector3 rayDirection = Vector3.down;
-                // float rayDistance = 10f; // Adjust this to match your ray length
-                // Debug.DrawRay(rayOrigin, rayDirection * rayDistance, Color.red, 0.1f);
-
                 RaycastHit hit;
                 if (Physics.Raycast(transform.position, Vector3.down, out hit, groundLayer))
                 {
@@ -83,4 +95,24 @@ public class CharacterController : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, rotationY, 0);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
     }
+
+    private bool CheckGrounded()
+{
+    Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
+    RaycastHit hit;
+
+    // Debug: Draw the ray
+    //Debug.DrawRay(rayOrigin, Vector3.down * groundCheckDistance, Color.red, 0.1f);
+
+    if (Physics.Raycast(rayOrigin, Vector3.down, out hit, groundCheckDistance, groundLayer))
+    {
+        //Debug.DrawRay(rayOrigin, Vector3.down * hit.distance, Color.blue, 0.1f);
+        gameInput.EnableMoveInput();
+        return true;
+    }
+
+    gameInput.DisableMoveInput();
+    return false;
+}
+
 }
