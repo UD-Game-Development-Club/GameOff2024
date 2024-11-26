@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2665f6639cbbe574a98407b39b728ec9
+timeCreated: 1470469503
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68960
+  packageName: Garden realistic tools
+  packageVersion: 1.0
+  assetPath: Assets/GardenTools/Saw/SawPrefab.prefab
+  uploadId: 131125

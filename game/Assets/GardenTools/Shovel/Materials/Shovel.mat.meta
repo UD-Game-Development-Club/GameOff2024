@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a1fa8f4f754fa8f429f124bd22a61efd
+timeCreated: 1470508275
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68960
+  packageName: Garden realistic tools
+  packageVersion: 1.0
+  assetPath: Assets/GardenTools/Shovel/Materials/Shovel.mat
+  uploadId: 131125

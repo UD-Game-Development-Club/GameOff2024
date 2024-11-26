@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 06b9a2de21ecf03428a691c4ec71cc06
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 36300000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176906
+  packageName: Stylized Nature Kit Lite
+  packageVersion: 1.2
+  assetPath: Assets/Stylized Nature Kit Lite/Scenes/Showcase Demo Scene/OcclusionCullingData.asset
+  uploadId: 705314

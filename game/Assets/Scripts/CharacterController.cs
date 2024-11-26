@@ -102,11 +102,11 @@ public class CharacterController : MonoBehaviour
     RaycastHit hit;
 
     // Debug: Draw the ray
-    //Debug.DrawRay(rayOrigin, Vector3.down * groundCheckDistance, Color.red, 0.1f);
+    Debug.DrawRay(rayOrigin, Vector3.down * groundCheckDistance, Color.red, 0.1f);
 
     if (Physics.Raycast(rayOrigin, Vector3.down, out hit, groundCheckDistance, groundLayer))
     {
-        //Debug.DrawRay(rayOrigin, Vector3.down * hit.distance, Color.blue, 0.1f);
+        Debug.DrawRay(rayOrigin, Vector3.down * hit.distance, Color.blue, 0.1f);
         gameInput.EnableMoveInput();
         return true;
     }

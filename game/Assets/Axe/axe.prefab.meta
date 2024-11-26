@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e048a401410aa9f4791cdd97e15735ca
+timeCreated: 1525018517
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 20493
+  packageName: Axe
+  packageVersion: V1.1
+  assetPath: Assets/Axe/axe.prefab
+  uploadId: 243086
