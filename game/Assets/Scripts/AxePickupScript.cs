@@ -1,12 +1,11 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AxePickupScript : MonoBehaviour, IInteractable
 {
-    [System.Obsolete]
-    public void OnInteraction(){
+    public void OnInteraction()
+    {
         gameObject.SetActive(false);
-        OutdoorGameState.Instance.hasAxe = true;
+        OutdoorGameState.Instance.HasAxe = true;
         Debug.Log("Picked up Axe");
     }
 }

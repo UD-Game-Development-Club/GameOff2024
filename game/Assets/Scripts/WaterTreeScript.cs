@@ -1,17 +1,18 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class WaterTreeScript : MonoBehaviour, IInteractable
 {
-    [System.Obsolete]
-    public void OnInteraction(){
-        if(OutdoorGameState.Instance.hasCan){
-            this.gameObject.SetActive(false);
-            OutdoorGameState.Instance.treeWatered = true;
-            // TODO: implement animation to cut down tree
+    public void OnInteraction()
+    {
+        if (OutdoorGameState.Instance.HasCan)
+        {
+            gameObject.SetActive(false);
+            OutdoorGameState.Instance.TreeWatered = true;
+            // TODO: implement animation to water tree
             Debug.Log("Watered Tree");
         }
-        else{
+        else
+        {
             // TODO: implement dialogue system to output hint
             Debug.Log("I need a watering can");
         }

@@ -2,22 +2,16 @@ using UnityEngine;
 
 public class ActivateTreeBridge : MonoBehaviour
 {
-    // Reference to the object that may become inactive
     [SerializeField] private GameObject targetObject;
 
-    [System.Obsolete]
-    void Update()
+    private void Update()
     {
-        if (OutdoorGameState.Instance.treeCut)
+        if (OutdoorGameState.Instance.TreeCut && 
+            targetObject != null && 
+            !targetObject.activeSelf)
         {
-            // Check if the target object exists
-            if (targetObject != null && !targetObject.activeSelf)
-            {
-                // Reactivate the object
-                targetObject.SetActive(true);
-                Debug.Log("Tree Bridge Activated");
-            }
+            targetObject.SetActive(true);
+            Debug.Log("Tree Bridge Activated");
         }
     }
 }
-

@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class CutTreeScript : MonoBehaviour
 {
-    [System.Obsolete]
-    public void OnInteraction(){
-        if(OutdoorGameState.Instance.hasAxe){
-            this.gameObject.SetActive(false);
-            OutdoorGameState.Instance.treeCut = true;
+    public void OnInteraction()
+    {
+        if (OutdoorGameState.Instance.HasAxe)
+        {
+            gameObject.SetActive(false);
+            OutdoorGameState.Instance.TreeCut = true;
             // TODO: implement animation to cut down tree
             Debug.Log("Cut down tree");
         }
-        else{
+        else
+        {
             // TODO: implement dialogue system to output hint
             Debug.Log("I need an axe");
         }

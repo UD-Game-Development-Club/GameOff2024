@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class WateringCanPickup : MonoBehaviour, IInteractable
 {
-    [System.Obsolete]
-    public void OnInteraction(){
+    public void OnInteraction()
+    {
         gameObject.SetActive(false);
-        OutdoorGameState.Instance.hasCan = true;
+        OutdoorGameState.Instance.HasCan = true;
         Debug.Log("Picked up Watering Can");
     }
 }
