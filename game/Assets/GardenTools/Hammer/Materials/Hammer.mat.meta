@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: aaa95b05e63d4574c84d1b658fefbedd
+timeCreated: 1470410440
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68960
+  packageName: Garden realistic tools
+  packageVersion: 1.0
+  assetPath: Assets/GardenTools/Hammer/Materials/Hammer.mat
+  uploadId: 131125

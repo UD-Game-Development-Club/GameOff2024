@@ -20,7 +20,7 @@ public class OutdoorGameState : MonoBehaviour
             return _instance;
         }
     }
-private bool _hasAxe = false;
+private bool _hasAxe = true;
      public bool hasAxe
     {
         get { return _hasAxe; }
@@ -31,14 +31,13 @@ private bool _hasAxe = false;
         }
     }
 
-    private bool _hasKey = false;
-     public bool hasKey
+    private bool _hasCan = true;
+    public bool hasCan
     {
-        get { return _hasKey; }
+        get { return _hasCan; }
         set
         {
-            _hasKey = value;
-            
+            _hasCan = value;
         }
     }
 
@@ -49,6 +48,16 @@ private bool _hasAxe = false;
         set
         {
             _treeCut = value;
+        }
+    }
+
+    private bool _treeWatered = false;
+    public bool treeWatered
+    {
+        get { return _treeWatered; }
+        set
+        {
+            _treeWatered = value;
         }
     }
 

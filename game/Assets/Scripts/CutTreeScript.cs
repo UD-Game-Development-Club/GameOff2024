@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class CutTreeScript : MonoBehaviour, IInteractable
+public class CutTreeScript : MonoBehaviour
 {
     [System.Obsolete]
     public void OnInteraction(){
@@ -9,11 +8,11 @@ public class CutTreeScript : MonoBehaviour, IInteractable
             this.gameObject.SetActive(false);
             OutdoorGameState.Instance.treeCut = true;
             // TODO: implement animation to cut down tree
-            Debug.Log("Chopped down tree");
+            Debug.Log("Cut down tree");
         }
         else{
             // TODO: implement dialogue system to output hint
-            Debug.Log("I need an axe to cut this down");
+            Debug.Log("I need an axe");
         }
     }
 }

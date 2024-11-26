@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4a78a3412fcbf8a46b113062b19b4e44
+timeCreated: 1470418776
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68960
+  packageName: Garden realistic tools
+  packageVersion: 1.0
+  assetPath: Assets/GardenTools/Sickle/SicklePrefab.prefab
+  uploadId: 131125

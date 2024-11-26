@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3256ad0cf42389f44bb4c2027c62b2d0
+timeCreated: 1470468607
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68960
+  packageName: Garden realistic tools
+  packageVersion: 1.0
+  assetPath: Assets/GardenTools/Saw/Materials/Saw.mat
+  uploadId: 131125

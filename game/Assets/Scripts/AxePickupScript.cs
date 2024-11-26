@@ -5,8 +5,8 @@ public class AxePickupScript : MonoBehaviour, IInteractable
 {
     [System.Obsolete]
     public void OnInteraction(){
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
         OutdoorGameState.Instance.hasAxe = true;
-        Debug.Log("This is axe !!!!!");
+        Debug.Log("Picked up Axe");
     }
 }
