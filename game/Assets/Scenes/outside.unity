@@ -7227,6 +7227,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 62660548986248610, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102240028592771416, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1391881685430189439, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7235,6 +7243,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4034080891140794523, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 774961813}
+    - target: {fileID: 4034080891140794523, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2107348064}
     - target: {fileID: 4415987137307362938, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
       propertyPath: m_Name
       value: COMMON
@@ -7293,7 +7309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6969910438343849364, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.93
+      value: -12.43
       objectReference: {fileID: 0}
     - target: {fileID: 6969910438343849364, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11003,6 +11019,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d627b1331a0300d45a4f012571533844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &774961813 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8449752225913232974, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+  m_PrefabInstance: {fileID: 303371314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &780627715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16267,7 +16288,7 @@ GameObject:
   - component: {fileID: 1545646277}
   - component: {fileID: 1545646279}
   - component: {fileID: 1545646278}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terrain
   m_TagString: grass
   m_Icon: {fileID: 0}
@@ -18439,6 +18460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 774961806}
+  originalParent: {fileID: 0}
   holdPosition: {fileID: 1730989957}
   gameInput: {fileID: 586061814}
 --- !u!4 &1761363939 stripped
@@ -20360,6 +20382,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1293140096}
   m_SourcePrefab: {fileID: 100100000, guid: 24aa3f94cdd2c8b4ca6d3c9ea92f22c8, type: 3}
+--- !u!95 &2107348064 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7642442730211472576, guid: aef7fe343b2615344ac0eb3f8072dad4, type: 3}
+  m_PrefabInstance: {fileID: 303371314}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2108646437
 GameObject:
   m_ObjectHideFlags: 0
