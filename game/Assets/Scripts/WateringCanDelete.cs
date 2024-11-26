@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class WateringCanDelete : MonoBehaviour
+public class WateringCanDelete : MonoBehaviour, IInteractable
 {
-    private void Update()
+    [SerializeField] private OutdoorGameState outdoorGameState;
+    public void OnInteraction()
     {
-        if (!OutdoorGameState.Instance.HasCan)
-        {
-            gameObject.SetActive(false);
-        }
+        outdoorGameState.HasCan = true;
+        gameObject.SetActive(false);
     }
 }

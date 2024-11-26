@@ -14,6 +14,8 @@ public class DoorTrigger : MonoBehaviour, IInteractable
         {
             // TODO: play unlock sound
             gameObject.SetActive(false);
+            // TODO: make dialgue for opening door
+            DialogueManager.Instance.StartDialogue(inkJSON);
         }
         else
         {

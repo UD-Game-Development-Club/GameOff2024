@@ -4,8 +4,8 @@ public class OutdoorGameState : MonoBehaviour
 {
     public static OutdoorGameState Instance { get; private set; }
 
-    public bool HasAxe { get; set; } = true;
-    public bool HasCan { get; set; } = true;
+    public bool HasAxe { get; set; } = false;
+    public bool HasCan { get; set; } = false;
     public bool TreeCut { get; set; }
     public bool TreeWatered { get; set; }
 

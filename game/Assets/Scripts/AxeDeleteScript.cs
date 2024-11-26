@@ -1,12 +1,11 @@
 using UnityEngine;
 
-public class AxeDeleteScript : MonoBehaviour
+public class AxeDeleteScript : MonoBehaviour, IInteractable
 {
-    private void Update()
+    [SerializeField] private OutdoorGameState outdoorGameState;
+    public void OnInteraction()
     {
-        if (OutdoorGameState.Instance.HasAxe)
-        {
-            gameObject.SetActive(false);
-        }
+        outdoorGameState.HasAxe = true;
+        gameObject.SetActive(false);
     }
 }
