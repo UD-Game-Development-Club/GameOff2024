@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour, IInteractable
 {
-    public bool isUnlocked = false;
+    public bool isUnlocked;
 
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
+    public void Start() {
+        isUnlocked = false;
+    }
+
     public void OnInteraction()
     {
+        Debug.Log("isUnlocked: " + isUnlocked);
         if (isUnlocked)
         {
             // TODO: play unlock sound
