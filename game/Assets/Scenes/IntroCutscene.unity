@@ -237,12 +237,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slides:
-  - {fileID: 2800000, guid: 960ed7a3cc89f5f4da2a152b7765b5fc, type: 3}
-  - {fileID: 2800000, guid: 8fedfadfeb12e4846b825d33599486af, type: 3}
-  - {fileID: 2800000, guid: 123bfb985c75c1d44b9e982b14f0ff0b, type: 3}
-  - {fileID: 2800000, guid: 9fa05afe0a1864a4a866789e9fd46f66, type: 3}
-  - {fileID: 2800000, guid: 8968554442172204c87a01331c66b297, type: 3}
-  - {fileID: 2800000, guid: fa3dd29bfd92d2141b0e9892a327ea40, type: 3}
+  - {fileID: 2800000, guid: 21b6a5b51fcb37e4b8154340bfe42932, type: 3}
+  - {fileID: 2800000, guid: aff92349a0b5d904ea1181ea11ed7b0f, type: 3}
+  - {fileID: 2800000, guid: 5382e23611026b446b6ff5d71a6e3a8e, type: 3}
+  - {fileID: 2800000, guid: 79e6021a54081ac4690a747205dc28d9, type: 3}
+  - {fileID: 2800000, guid: f7450cbafa710034b833bfd5bdfd2a70, type: 3}
+  - {fileID: 2800000, guid: 9013ab2872eefc244965aaee55f13985, type: 3}
 --- !u!1 &270612758
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +621,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
