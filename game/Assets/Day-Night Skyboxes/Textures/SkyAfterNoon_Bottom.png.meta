@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b6ef619cfefbc3a48bfe3a846f9adb9a
+guid: d8dcd61e2be943643b96e8fffc589794
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -30,16 +30,16 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -63,9 +63,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
@@ -115,10 +115,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 32236
-  packageName: '10 Skyboxes Pack : Day - Night'
-  packageVersion: 2.0
-  assetPath: Assets/Day-Night Skyboxes/Textures/SkyAfterNoon_Bottom.png
-  uploadId: 139764
