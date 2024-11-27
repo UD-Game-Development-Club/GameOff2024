@@ -14,7 +14,6 @@ public class DoorTrigger : MonoBehaviour, IInteractable
 
     public void OnInteraction()
     {
-        Debug.Log("isUnlocked: " + isUnlocked);
         if (isUnlocked)
         {
             // TODO: play unlock sound

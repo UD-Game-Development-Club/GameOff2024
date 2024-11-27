@@ -18,7 +18,6 @@ public class PickupShedKey : MonoBehaviour, IInteractable
 
     public void OnInteraction()
     {
-        Debug.Log("Called interaction");
         doorTrigger.isUnlocked = true;
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");

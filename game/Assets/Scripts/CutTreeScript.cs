@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class CutTreeScript : MonoBehaviour
 {
+    [SerializeField] private OutdoorGameState outdoorGameState;
     public void OnInteraction()
     {
-        if (OutdoorGameState.Instance.HasAxe)
+        if (outdoorGameState.HasAxe)
         {
             gameObject.SetActive(false);
-            OutdoorGameState.Instance.TreeCut = true;
+            outdoorGameState.TreeCut = true;
             // TODO: implement animation to cut down tree
             Debug.Log("Cut down tree");
         }

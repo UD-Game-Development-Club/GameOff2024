@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class WaterTreeScript : MonoBehaviour, IInteractable
 {
+    [SerializeField] private OutdoorGameState outdoorGameState;
+
     public void OnInteraction()
     {
-        if (OutdoorGameState.Instance.HasCan)
+        if (outdoorGameState.HasCan)
         {
-            gameObject.SetActive(false);
-            OutdoorGameState.Instance.TreeWatered = true;
             // TODO: implement animation to water tree
-            Debug.Log("Watered Tree");
+            outdoorGameState.TreeWatered = true;
         }
         else
         {

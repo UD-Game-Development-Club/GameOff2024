@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class OnWaterTreeRemove : MonoBehaviour
 {
+    [SerializeField] private OutdoorGameState outdoorGameState;
     private void Update()
     {
-        if (OutdoorGameState.Instance.TreeWatered)
+        if (outdoorGameState.TreeWatered)
         {
             gameObject.SetActive(false);
         }
