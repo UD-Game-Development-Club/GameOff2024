@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class OnTreeCut : MonoBehaviour
 {
+    public OutdoorGameState outdoorGameState;
     // Update is called once per frame
     [System.Obsolete]
     void Update()
     {
-        if(OutdoorGameState.Instance.treeCut){
+        if(outdoorGameState.treeCut){
             // Destroy this GameObject
             this.gameObject.SetActive(false);
         }

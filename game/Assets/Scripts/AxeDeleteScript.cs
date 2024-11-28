@@ -1,16 +1,10 @@
 using UnityEngine;
 
-public class AxeDeleteScript : MonoBehaviour
+public class AxeDeleteScript : MonoBehaviour, IInteractable
 {
-    // Update is called once per frame
-    [System.Obsolete]
-    void Update()
+    public void OnInteraction()
     {
-        // Check the game state variable
-        if (OutdoorGameState.Instance.hasAxe)
-        {
-            // Destroy this GameObject
-            this.gameObject.SetActive(false);
-        }
+        OutdoorGameState.Instance.hasAxe = true;
+        gameObject.SetActive(false);
     }
 }

@@ -27,7 +27,7 @@ private bool _hasAxe = true;
         set
         {
             _hasAxe = value;
-            
+
         }
     }
 
