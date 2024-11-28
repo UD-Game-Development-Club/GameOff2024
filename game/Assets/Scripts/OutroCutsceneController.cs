@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class OutroCutsceneController : MonoBehaviour
@@ -14,7 +15,7 @@ public class OutroCutsceneController : MonoBehaviour
      * Credits
      */
     [SerializeField] private GameObject credits;
-    private int creditThresh = 3500;
+    private int creditThresh = 6000;
 
     // common
     private bool inSlideShow = true;
@@ -51,8 +52,14 @@ public class OutroCutsceneController : MonoBehaviour
 
             // leaving this because of a weird bug, i will need to use it later LOL
             //Debug.Log(credits.transform.position.y);
-            if(credits.transform.position.y > creditThresh)
+            if (credits.transform.position.y > creditThresh)
+                //StartCoroutine(Wait());
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
         }
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSecondsRealtime(5f);
     }
 }
