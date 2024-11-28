@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class OnTreeCutRemove : MonoBehaviour, IInteractable
 {
+    [SerializeField] private TextAsset inkJSON;
     [SerializeField] private OutdoorGameState outdoorGameState;
     [SerializeField] private GameObject invisWall1;
     [SerializeField] private GameObject invisWall2;
@@ -15,6 +16,7 @@ public class OnTreeCutRemove : MonoBehaviour, IInteractable
         } else {
             // TODO: Add animation
             Debug.Log("Need Axe");
+            DialogueManager.Instance.StartDialogue(inkJSON);
         }
     }
 }
