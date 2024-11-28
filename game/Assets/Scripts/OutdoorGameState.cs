@@ -20,7 +20,7 @@ public class OutdoorGameState : MonoBehaviour
             return _instance;
         }
     }
-private bool _hasAxe = true;
+private bool _hasAxe = false;
      public bool hasAxe
     {
         get { return _hasAxe; }
@@ -31,7 +31,7 @@ private bool _hasAxe = true;
         }
     }
 
-    private bool _hasCan = true;
+    private bool _hasCan = false;
     public bool hasCan
     {
         get { return _hasCan; }

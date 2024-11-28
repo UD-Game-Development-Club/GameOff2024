@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 9813ed0b3eddc834a8202f421870eeb2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 176906
+  packageName: Stylized Nature Kit Lite
+  packageVersion: 1.2
+  assetPath: Assets/Stylized Nature Kit Lite/Meshes/Foliage/Trees/Spruce 2.fbx
+  uploadId: 705314
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,8 +23,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -32,7 +37,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages:
     - 0.25
@@ -111,10 +116,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 176906
-  packageName: Stylized Nature Kit Lite
-  packageVersion: 1.2
-  assetPath: Assets/Stylized Nature Kit Lite/Meshes/Foliage/Trees/Spruce 2.fbx
-  uploadId: 705314
