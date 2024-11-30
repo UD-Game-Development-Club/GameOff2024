@@ -1,14 +1,25 @@
 using UnityEngine;
 
-public class OnWaterTreeRemove : MonoBehaviour
+public class OnWaterTreeRemove : MonoBehaviour, IInteractable
 {
-    // Update is called once per frame
+    [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private TextAsset treeWateredDialogue;
+    [SerializeField] private GameObject presentSapling;
+    [SerializeField] private GameObject growTree;
+
     [System.Obsolete]
-    void Update()
+    public void OnInteraction()
     {
-        if(OutdoorGameState.Instance.treeWatered){
-            // Destroy this GameObject
-            this.gameObject.SetActive(false);
+        if (!OutdoorGameState.Instance.treeWatered) {
+            if(OutdoorGameState.Instance.hasCan){
+                OutdoorGameState.Instance.treeWatered = true;
+                gameObject.tag = "Untagged";
+                presentSapling.SetActive(false);
+                growTree.SetActive(true);
+                DialogueManager.Instance.StartDialogue(treeWateredDialogue);
+            } else {
+                DialogueManager.Instance.StartDialogue(inkJSON);
+            }
         }
     }
 }

@@ -1,14 +1,24 @@
 using UnityEngine;
 
-public class OnTreeCut : MonoBehaviour
+public class OnTreeCutRemove : MonoBehaviour, IInteractable
 {
-    // Update is called once per frame
-    [System.Obsolete]
-    void Update()
-    {
-        if(OutdoorGameState.Instance.treeCut){
-            // Destroy this GameObject
-            this.gameObject.SetActive(false);
+    [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private TextAsset inkJSONTreeCut;
+    [SerializeField] private OutdoorGameState outdoorGameState;
+    [SerializeField] private GameObject invisWall1;
+    [SerializeField] private GameObject invisWall2;
+    
+    public void OnInteraction() {
+        if (outdoorGameState.hasAxe) {
+            gameObject.SetActive(false);
+            invisWall1.SetActive(false);
+            invisWall2.SetActive(false);
+            outdoorGameState.treeCut = true;
+            DialogueManager.Instance.StartDialogue(inkJSONTreeCut);
+        } else {
+            // TODO: Add animation
+            Debug.Log("Need Axe");
+            DialogueManager.Instance.StartDialogue(inkJSON);
         }
     }
 }
