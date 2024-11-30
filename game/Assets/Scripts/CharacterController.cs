@@ -25,6 +25,8 @@ public class CharacterController : MonoBehaviour
 
     private bool isGrounded;
 
+    public bool locked = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -39,6 +41,10 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
+        if (locked)
+        {
+            return;
+        }
         /*
          * Check if grounded by casting a ray downwards
          */
