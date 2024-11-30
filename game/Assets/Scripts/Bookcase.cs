@@ -7,10 +7,10 @@ public class Bookcase : DialogueInteract
     
     public override void OnInteraction()
     {
-        DialogueManager.Instance.StartDialogue(inkJSON, chooseBook);
+        DialogueManager.Instance.StartDialogue(inkJSON, ChooseBook);
     }
 
-    private void chooseBook()
+    private void ChooseBook()
     {
         string chosenBook = "";
         int choice = DialogueManager.Instance.currentChoice;
