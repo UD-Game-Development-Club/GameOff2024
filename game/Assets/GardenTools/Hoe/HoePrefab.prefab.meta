@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: adf79a2ca6c162e45854a3b5bf76a8f8
+timeCreated: 1470507466
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68960
+  packageName: Garden realistic tools
+  packageVersion: 1.0
+  assetPath: Assets/GardenTools/Hoe/HoePrefab.prefab
+  uploadId: 131125

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4002d0ec3a96a464a9070409be1ade68
+timeCreated: 1470410750
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 68960
+  packageName: Garden realistic tools
+  packageVersion: 1.0
+  assetPath: Assets/GardenTools/Hammer/HammerPrefab.prefab
+  uploadId: 131125

@@ -42,7 +42,7 @@ public class CharacterController : MonoBehaviour
         /*
          * Check if grounded by casting a ray downwards
          */
-        isGrounded = CheckGrounded();
+        // isGrounded = CheckGrounded();
 
         /*
          * Movement
@@ -96,23 +96,23 @@ public class CharacterController : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
     }
 
-    private bool CheckGrounded()
-{
-    Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
-    RaycastHit hit;
+//     private bool CheckGrounded()
+// {
+//     Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
+//     RaycastHit hit;
 
-    // Debug: Draw the ray
-    //Debug.DrawRay(rayOrigin, Vector3.down * groundCheckDistance, Color.red, 0.1f);
+//     // Debug: Draw the ray
+//     Debug.DrawRay(rayOrigin, Vector3.down * groundCheckDistance, Color.red, 0.1f);
 
-    if (Physics.Raycast(rayOrigin, Vector3.down, out hit, groundCheckDistance, groundLayer))
-    {
-        //Debug.DrawRay(rayOrigin, Vector3.down * hit.distance, Color.blue, 0.1f);
-        gameInput.EnableMoveInput();
-        return true;
-    }
+//     if (Physics.Raycast(rayOrigin, Vector3.down, out hit, groundCheckDistance, groundLayer))
+//     {
+//         Debug.DrawRay(rayOrigin, Vector3.down * hit.distance, Color.blue, 0.1f);
+//         gameInput.EnableMoveInput();
+//         return true;
+//     }
 
-    gameInput.DisableMoveInput();
-    return false;
-}
+//     gameInput.DisableMoveInput();
+//     return false;
+// }
 
 }

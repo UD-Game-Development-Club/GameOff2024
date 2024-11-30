@@ -15,6 +15,10 @@ TagManager:
   - PaintingCollideable1
   - PaintingCollideable2
   - PaintingCollideable3
+  - PaintingWin
+  - PaintingLight1
+  - PaintingLight2
+  - PaintingLight3
   layers:
   - Default
   - TransparentFX
