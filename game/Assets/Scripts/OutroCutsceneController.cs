@@ -14,7 +14,7 @@ public class OutroCutsceneController : MonoBehaviour
      * Credits
      */
     [SerializeField] private GameObject credits;
-    private int creditThresh = 3500;
+    private int creditThresh = 5000;
 
     // common
     private bool inSlideShow = true;
