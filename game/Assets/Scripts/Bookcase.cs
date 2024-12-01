@@ -4,7 +4,9 @@ using UnityEngine;
 public class Bookcase : DialogueInteract
 {
     [SerializeField] private String[] books;
-    
+    [SerializeField] private int validBook = -1;
+    [SerializeField] private TextAsset correctJSON = null;
+
     public override void OnInteraction()
     {
         DialogueManager.Instance.StartDialogue(inkJSON, ChooseBook);
@@ -18,7 +20,17 @@ public class Bookcase : DialogueInteract
         {
             chosenBook = books[DialogueManager.Instance.currentChoice];
         }
-        Debug.Log(chosenBook);
+
+        if (chosenBook == books[validBook] && correctJSON != null)
+        {
+            DialogueManager.Instance.StartDialogue(correctJSON, enableNote);
+        }
+    }
+
+    public void enableNote()
+    {
+        GameObject note = GameObject.Find("Library Puzzle Win Code");
+        note.SetActive(true);
     }
 
 }
