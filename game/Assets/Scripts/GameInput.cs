@@ -73,14 +73,4 @@ public class GameInput : MonoBehaviour
     {
         return inputSystemActions.Player.Attack.WasPressedThisFrame();
     }
-
-    public bool GetMoveEnabled()
-    {
-        return inputSystemActions.Player.Move.enabled;
-    }
-
-    public bool GetLookEnabled()
-    {
-        return inputSystemActions.Player.Look.enabled;
-    }
 }

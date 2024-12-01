@@ -52,23 +52,31 @@ public class Safe: DialogueInteract
                 entering = false;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-
-                int currentCodeInt = int.Parse(currentCode);
-                int passCodeInt = int.Parse(passCode);
-
-                if (currentCodeInt == passCodeInt)
-                {
-                    unlocked = true;
-                    src.PlayOneShot(right);
-                    DialogueManager.Instance.StartDialogue(correctJSON);
-                    character.GetComponent<CharacterController>().locked = false;
-                    key.SetActive(true);
-                }
-                else
+                if(currentCode == "")
                 {
                     character.GetComponent<CharacterController>().locked = false;
                     src.PlayOneShot(wrong);
                     DialogueManager.Instance.StartDialogue(incorrectJSON);
+                }
+                else
+                {
+                    int currentCodeInt = int.Parse(currentCode);
+                    int passCodeInt = int.Parse(passCode);
+
+                    if (currentCodeInt == passCodeInt)
+                    {
+                        unlocked = true;
+                        src.PlayOneShot(right);
+                        DialogueManager.Instance.StartDialogue(correctJSON);
+                        character.GetComponent<CharacterController>().locked = false;
+                        key.SetActive(true);
+                    }
+                    else
+                    {
+                        character.GetComponent<CharacterController>().locked = false;
+                        src.PlayOneShot(wrong);
+                        DialogueManager.Instance.StartDialogue(incorrectJSON);
+                    }
                 }
 
                 currentCode = "";

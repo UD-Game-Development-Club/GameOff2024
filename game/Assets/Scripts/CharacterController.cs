@@ -41,10 +41,6 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
-        if (locked)
-        {
-            return;
-        }
         /*
          * Check if grounded by casting a ray downwards
          */
@@ -54,7 +50,7 @@ public class CharacterController : MonoBehaviour
          * Movement
          */
         Vector2 inputVector = Vector2.zero;
-        if(gameInput.GetMoveEnabled())
+        if(!locked)
         {
             inputVector = gameInput.GetMovementVector2Normalized();
         }
@@ -97,7 +93,7 @@ public class CharacterController : MonoBehaviour
         * Camera
         */
         Vector2 mouseMovement = Vector2.zero;
-        if(gameInput.GetLookEnabled())
+        if(!locked)
         {
             mouseMovement = gameInput.GetMouseDelta();
         }
