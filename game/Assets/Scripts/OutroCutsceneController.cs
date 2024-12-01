@@ -19,11 +19,14 @@ public class OutroCutsceneController : MonoBehaviour
     // common
     private bool inSlideShow = true;
 
+    private AudioSource src;
+    [SerializeField] AudioClip slideSound;
 
     void Start()
     {
         gameInput = gameObject.AddComponent<GameInput>();
         slide = transform.Find("CurrentSlide").gameObject;
+        src = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
@@ -35,6 +38,9 @@ public class OutroCutsceneController : MonoBehaviour
             if (gameInput.GetSpaceBar())
             {
                 slideIndex++;
+
+                src.clip = slideSound;
+                src.Play();
 
                 if (slideIndex >= slides.Length)
                 {

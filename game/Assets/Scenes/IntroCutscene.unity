@@ -243,6 +243,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 79e6021a54081ac4690a747205dc28d9, type: 3}
   - {fileID: 2800000, guid: f7450cbafa710034b833bfd5bdfd2a70, type: 3}
   - {fileID: 2800000, guid: 9013ab2872eefc244965aaee55f13985, type: 3}
+  slideSound: {fileID: 8300000, guid: 6b1d4b16ebedaee48a2d01902f0b6822, type: 3}
 --- !u!1 &270612758
 GameObject:
   m_ObjectHideFlags: 0
