@@ -19,6 +19,8 @@ public class Safe: DialogueInteract
     [SerializeField] private AudioClip right;
     [SerializeField] private AudioClip click;
 
+    [SerializeField] private GameInput gameInput;
+
     bool entering = false;
     bool unlocked = false;
     string passCode = "3862";
@@ -111,6 +113,16 @@ public class Safe: DialogueInteract
 
     public void Update()
     {
+        // if we switch time periods, drop out of the safe panel
+        if (gameInput.GetInteractClick())
+        {
+            entering = false;
+            safeUI.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            character.GetComponent<CharacterController>().locked = false;
+        }
+
         codeString.GetComponent<TextMeshProUGUI>().text = currentCode;
 
         if(!entering)
