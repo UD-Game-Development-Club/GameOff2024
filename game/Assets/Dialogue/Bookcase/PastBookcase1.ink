@@ -1,3 +1,4 @@
+EXTERNAL callCallback()
 There's a couple interesting books on this bookcase
     + [Sugar Sugar More Sugar...]
         -> chooseBook1()
@@ -7,6 +8,7 @@ There's a couple interesting books on this bookcase
         -> chooseBook3()
 == chooseBook1 ==
 Sugar Sugar More Sugar: The Cookbook
+~ callCallback()
 -> END
 == chooseBook2 ==
 How to Make a Videogame in One Month from People who Failed

@@ -1,1 +1,1 @@
-﻿{"inkVersion":21,"root":[["^A slip of paper falls out of the book, landing at my feet.","\n","ev",{"x()":"correctBook"},"pop","/ev","\n","end",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
+﻿{"inkVersion":21,"root":[["^A slip of paper falls out of the book, landing at my feet.","\n","ev",{"x()":"callCallback"},"pop","/ev","\n","end",["done",{"#f":5,"#n":"g-0"}],null],"done",{"#f":1}],"listDefs":{}}
