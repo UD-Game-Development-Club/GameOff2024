@@ -26,16 +26,20 @@ public class FootstepController : MonoBehaviour
         switch (hit.collider.tag)
         {
             case "wood":
+                audioSource.volume = 1f;
                 audioSource.clip = woodFootstepSounds[Random.Range(0, woodFootstepSounds.Length)];
                 break;
             case "carpet":
+                audioSource.volume = 0.2f;
                 audioSource.clip = carpetFootstepSounds[Random.Range(0, carpetFootstepSounds.Length)];
                 break;
             case "grass":
+                audioSource.volume = 0.7f;
                 audioSource.clip = grassFootstepSounds[Random.Range(0, grassFootstepSounds.Length)];
                 break;
             default:
             case "concrete":
+                audioSource.volume = 1f;
                 audioSource.clip = concreteFootstepSounds[Random.Range(0, concreteFootstepSounds.Length)];
                 break;
         }
