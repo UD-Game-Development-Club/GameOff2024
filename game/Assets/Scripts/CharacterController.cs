@@ -25,6 +25,8 @@ public class CharacterController : MonoBehaviour
 
     private bool isGrounded;
 
+    public bool locked = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,11 +45,15 @@ public class CharacterController : MonoBehaviour
          * Check if grounded by casting a ray downwards
          */
         // isGrounded = CheckGrounded();
-
+        
         /*
          * Movement
          */
-        Vector2 inputVector = gameInput.GetMovementVector2Normalized();
+        Vector2 inputVector = Vector2.zero;
+        if(!locked)
+        {
+            inputVector = gameInput.GetMovementVector2Normalized();
+        }
         Vector3 moveDirection = (transform.forward * inputVector.y) + (transform.right * inputVector.x);
         moveDirection.y = 0; // Ensure no vertical movement in horizontal plane
 
@@ -66,12 +72,11 @@ public class CharacterController : MonoBehaviour
             // Apply gravity if not grounded
             newVelocity.y = rb.linearVelocity.y; // Allow gravity to take effect
         }
-
         rb.linearVelocity = newVelocity;
 
         /*
-         * Footstep sounds
-         */
+        * Footstep sounds
+        */
         if (isMoving)
         {
             if (footstepController.footstepCooldown <= 0)
@@ -85,9 +90,13 @@ public class CharacterController : MonoBehaviour
         }
 
         /*
-         * Camera
-         */
-        Vector2 mouseMovement = gameInput.GetMouseDelta();
+        * Camera
+        */
+        Vector2 mouseMovement = Vector2.zero;
+        if(!locked)
+        {
+            mouseMovement = gameInput.GetMouseDelta();
+        }
         rotationY += mouseMovement.x * sensitivityX;
         rotationX -= mouseMovement.y * sensitivityY;
         rotationX = Mathf.Clamp(rotationX, -90f, 90f);

@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 public class PaintingPuzzleScore : MonoBehaviour
 {
     private GameObject painting;
-    private GameObject win;
+    [SerializeField] private GameObject win;
     private Rigidbody rb;
     private BoxCollider boxCollider;
     public static int puzzleScore = 0;
@@ -19,7 +19,6 @@ public class PaintingPuzzleScore : MonoBehaviour
     private void Start()
     {
         painting = gameObject;
-        win = GameObject.FindWithTag("PaintingWin");
         rb = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider>();
 
