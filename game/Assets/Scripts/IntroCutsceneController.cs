@@ -8,10 +8,14 @@ public class IntroCutsceneController : MonoBehaviour
     [SerializeField] private Texture2D[] slides;
     private int slideIndex = 0;
 
+    private AudioSource src;
+    [SerializeField] AudioClip slideSound;
+
     void Start()
     {
         gameInput = gameObject.AddComponent<GameInput>();
         slide = transform.Find("CurrentSlide").gameObject;
+        src = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
@@ -21,8 +25,11 @@ public class IntroCutsceneController : MonoBehaviour
         if (gameInput.GetSpaceBar())
         {
             slideIndex++;
-        
-            if(slideIndex >= slides.Length)
+
+            src.clip = slideSound;
+            src.Play();
+
+            if (slideIndex >= slides.Length)
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("basement");
             }
