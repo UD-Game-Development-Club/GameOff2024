@@ -72,7 +72,7 @@ public class CharacterController : MonoBehaviour
             // Apply gravity if not grounded
             newVelocity.y = rb.linearVelocity.y; // Allow gravity to take effect
         }
-
+        Debug.Log(newVelocity);
         rb.linearVelocity = newVelocity;
 
         /*
@@ -99,6 +99,7 @@ public class CharacterController : MonoBehaviour
         rotationX = Mathf.Clamp(rotationX, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(0, rotationY, 0);
+        Debug.Log(transform.rotation);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
     }
 
