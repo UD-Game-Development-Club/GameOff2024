@@ -9,6 +9,9 @@ public class MMIntroBGM : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
     
     void Start()
