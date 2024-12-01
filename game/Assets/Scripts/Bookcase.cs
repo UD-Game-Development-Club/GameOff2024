@@ -5,16 +5,18 @@ public class Bookcase : DialogueInteract
 {
     [SerializeField] private String[] books;
     [SerializeField] private int validBook = -1;
-    [SerializeField] private TextAsset correctJSON = null;
+    [SerializeField] private GameObject note;
 
     public override void OnInteraction()
     {
-        DialogueManager.Instance.StartDialogue(inkJSON, ChooseBook);
+        DialogueManager.Instance.StartDialogue(inkJSON, CorrectBook);
     }
 
-    private void ChooseBook()
+    private void CorrectBook()
     {
-        GameObject note = GameObject.Find("Library Puzzle Win Code");
-        note.SetActive(true);
+        if(note != null)
+        {
+            note.SetActive(true);
+        }
     }
 }
