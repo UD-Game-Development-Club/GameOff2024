@@ -49,11 +49,15 @@ public class CharacterController : MonoBehaviour
          * Check if grounded by casting a ray downwards
          */
         // isGrounded = CheckGrounded();
-
+        
         /*
          * Movement
          */
-        Vector2 inputVector = gameInput.GetMovementVector2Normalized();
+        Vector2 inputVector = Vector2.zero;
+        if(gameInput.GetMoveEnabled())
+        {
+            inputVector = gameInput.GetMovementVector2Normalized();
+        }
         Vector3 moveDirection = (transform.forward * inputVector.y) + (transform.right * inputVector.x);
         moveDirection.y = 0; // Ensure no vertical movement in horizontal plane
 
@@ -72,12 +76,11 @@ public class CharacterController : MonoBehaviour
             // Apply gravity if not grounded
             newVelocity.y = rb.linearVelocity.y; // Allow gravity to take effect
         }
-        Debug.Log(newVelocity);
         rb.linearVelocity = newVelocity;
 
         /*
-         * Footstep sounds
-         */
+        * Footstep sounds
+        */
         if (isMoving)
         {
             if (footstepController.footstepCooldown <= 0)
@@ -91,15 +94,18 @@ public class CharacterController : MonoBehaviour
         }
 
         /*
-         * Camera
-         */
-        Vector2 mouseMovement = gameInput.GetMouseDelta();
+        * Camera
+        */
+        Vector2 mouseMovement = Vector2.zero;
+        if(gameInput.GetLookEnabled())
+        {
+            mouseMovement = gameInput.GetMouseDelta();
+        }
         rotationY += mouseMovement.x * sensitivityX;
         rotationX -= mouseMovement.y * sensitivityY;
         rotationX = Mathf.Clamp(rotationX, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(0, rotationY, 0);
-        Debug.Log(transform.rotation);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
     }
 
