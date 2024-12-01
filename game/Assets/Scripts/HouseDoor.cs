@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HouseDoor : MonoBehaviour
+public class HouseDoor : MonoBehaviour, IInteractable
 {
-    private void OnTriggerEnter(Collider other)
+    public void OnInteraction()
     {
-        if (other.CompareTag("Player")) SceneManager.LoadScene("abandonedhouse", LoadSceneMode.Single);
+        SceneManager.LoadScene("abandonedhouse", LoadSceneMode.Single);
     }
 }
