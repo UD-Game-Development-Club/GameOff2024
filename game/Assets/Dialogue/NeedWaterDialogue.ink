@@ -1,1 +1,1 @@
-﻿The tree looks dry and lifeless. Maybe it just needs a little water to grow.
+The tree looks dry and lifeless. Maybe it just needs a little water to grow.

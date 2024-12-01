@@ -4,21 +4,19 @@ using UnityEngine;
 public class Bookcase : DialogueInteract
 {
     [SerializeField] private String[] books;
-    
+    [SerializeField] private int validBook = -1;
+    [SerializeField] private GameObject note;
+
     public override void OnInteraction()
     {
-        DialogueManager.Instance.StartDialogue(inkJSON, chooseBook);
+        DialogueManager.Instance.StartDialogue(inkJSON, CorrectBook);
     }
 
-    private void chooseBook()
+    private void CorrectBook()
     {
-        string chosenBook = "";
-        int choice = DialogueManager.Instance.currentChoice;
-        if(books.Length >= choice)
+        if(note != null)
         {
-            chosenBook = books[DialogueManager.Instance.currentChoice];
+            note.SetActive(true);
         }
-        Debug.Log(chosenBook);
     }
-
 }

@@ -24,6 +24,7 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
     private bool dialogueActive;
+    public bool gettingInput;
     private Coroutine displayTextCoroutine;
     private string currentDialogue;
     private int choiceCount;
@@ -73,7 +74,7 @@ public class DialogueManager : MonoBehaviour
                 FinishCurrentDialog();
             }
             // Continue to next dialogue line
-            else if(choiceCount == 0)
+            else if(choiceCount == 0 && !gettingInput)
             {
                 ContinueDialog();
             }
@@ -88,7 +89,7 @@ public class DialogueManager : MonoBehaviour
             dialogueActive = true;
             dialoguePanel.SetActive(true);
 
-            currentStory.BindExternalFunction("choiceCallback", () => {
+            currentStory.BindExternalFunction("callCallback", () => {
                 callback?.Invoke();
             });
             
