@@ -1,0 +1,1 @@
+﻿You step outside into silence. Across the river stands an abandoned house, its broken windows calling to you. You'll need to find a way across.
