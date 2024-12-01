@@ -16,7 +16,7 @@ THE END
 == chooseBook2 ==
 Missing in Time: The Album: The Book: Now On Spotify?
 Missing in Time. NOW AVAILABLE ON SPOTIFY
-Find it now at https:\/\/open.spotify.com/search/fakelinksomething
+Find it now at https://open.spotify.com/artist/7g4cFZrtef5rQTPin36FVY?si=N3FSjcQeTBqzULjzge8sPg
 -> END
 == chooseBook3 ==
 Evangoonion

@@ -13,18 +13,11 @@ Faucibus dapibus tincidunt in aliquet, himenaeos aliquam dictum donec.
 Egestas nec sollicitudin maecenas class sociosqu nostra habitant eros vel.
 -> END
 == chooseBook2 ==
-Beginners Guide to Yoyo Engine by Ryan ZAAAMUDAAA
-What is Yoyo Engine? <br>Yoyoengine started as a small game in SDL, and evolved into a fully featured, 
-general purpose 2D game engine.
-Why is Yoyo Engine? <br>In May 2023, I started working on a visual novel game in SDL2 as 
-a way to learn C for the very first time. 
-While I have yet to finish that game, the dopamine loop of working with a lower level language quickly spiraled me into a scope creep grind, 
-and I ended up with a fully featured, general purpose game engine.
-Who is Yoyo Engine? <br>I work on random projects of interest, and occasionally build games with this engine.
-Feel free to check out my work on GitHub or Itch.io.
-You can get in touch with me through my portfolio, on discord @zoogies, or by opening an issue on this repository. 
-I don't usually check my email, but you can try that too.
-Use Yoyo Engine now at https:\/\/github.com\/yoyoengine\/yoyoengine?tab=readme-ov-file
+Beginners Guide to Yoyo Engine - by Zoogies
+Are you tired of bloated, overcomplicated game engines?
+Do you wish your engine was written in pure C, the way god intended?
+Try yoyoengine, a custom, hackable 2D game engine written in C.
+https:\/\/github.com\/yoyoengine
 -> END
 == chooseBook3 ==
 Dan The Bug Fixer Vol 999: The Bugs Never End
