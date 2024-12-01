@@ -1,1 +1,1 @@
-﻿The tree falls with a loud crash, forming a makeshift bridge. Who knows what awaits on the other side?
+The tree falls with a loud crash, forming a makeshift bridge. Who knows what awaits on the other side?

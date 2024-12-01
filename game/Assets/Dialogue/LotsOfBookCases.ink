@@ -1,2 +1,2 @@
-﻿What's the deal with all these bookcases?
+What's the deal with all these bookcases?
 There has to be a way through...

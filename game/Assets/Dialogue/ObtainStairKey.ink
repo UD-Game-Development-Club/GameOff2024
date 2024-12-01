@@ -1,2 +1,2 @@
-﻿Nice!
+Nice!
 This looks like it fits the lock on the stairs...
